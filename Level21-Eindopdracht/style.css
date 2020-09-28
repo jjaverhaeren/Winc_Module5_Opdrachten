@@ -1,0 +1,139 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: rgb(12, 20, 20);
+  font-family: "Roboto Condensed", sans-serif;
+}
+
+header {
+  width: 100%;
+  height: auto;
+  position: fixed;
+  z-index: 5;
+}
+
+.sitename {
+  width: 100%;
+  height: auto;
+  /* font-size: 3rem; */
+  color: rgb(206, 221, 208);
+  background-color: rgb(12, 20, 20);
+  text-align: center;
+  padding: 20px 0px 12px 0px;
+}
+
+h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 4rem;
+  background-image: url("./img/daysoffuturepast\ copy.jpg");
+  background-size: cover;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  font-weight: 900;
+  margin: 0 auto;
+  width: auto;
+  position: relative;
+}
+
+.filters_container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+label {
+  margin-left: 5px;
+  padding-bottom: 5px;
+}
+.radio_container {
+  text-align: center;
+  color: rgb(206, 221, 208);
+  background-color: rgb(12, 20, 20);
+  padding: 10px;
+  width: 200px;
+}
+
+.radio_container:hover {
+  color: white;
+}
+
+#input__container {
+  display: flex;
+}
+
+#filter__search {
+  display: inline;
+}
+#clear-input {
+  width: 20px;
+  font-size: 1rem;
+  display: inline;
+}
+
+#container {
+  position: relative;
+  top: 150px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  width: 100%;
+  height: auto;
+  padding: 0px 20px;
+}
+
+.newmovie_container {
+  background-color: rgb(33, 33, 56);
+  /* border: 3px solid rgb(5, 12, 5); */
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 30px;
+  width: 300px;
+}
+
+.img {
+  grid-row: 1 / span2;
+  grid-column: 1 / span2;
+  max-width: 350px;
+  height: auto;
+  z-index: 2;
+  transition-duration: 350ms;
+  box-shadow: 0px 0px 20px 0px rgba(162, 189, 165, 1);
+}
+
+.img:hover {
+  opacity: 0.4;
+  z-index: 0;
+  transition-duration: 350ms;
+  box-shadow: 0px 9px 30px 0px rgba(162, 189, 165, 1);
+}
+
+.movielink:hover {
+  z-index: 3;
+  transition-duration: 350ms;
+  color: white;
+  border: 1px solid white;
+}
+
+.movielink {
+  text-decoration: none;
+  text-align: center;
+  background-color: rgb(33, 33, 56);
+  color: rgb(206, 221, 208);
+  border: 1px solid rgb(206, 221, 208);
+  grid-row: 1 / span2;
+  grid-column: 1 / span2;
+  justify-self: center;
+  align-self: center;
+  padding: 10px 10px 10px 10px;
+  width: 200px;
+  height: auto;
+  border-radius: 5px;
+  font-size: 1rem;
+
+  z-index: 1;
+  transition-duration: 350ms;
+}

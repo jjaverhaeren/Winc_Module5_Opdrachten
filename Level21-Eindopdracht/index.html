@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Movie Finder</title>
+    <link rel="stylesheet" href="./style.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@300;400;700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@900&display=swap"
+      rel="stylesheet"
+    />
+    <script defer src="./database.js"></script>
+    <script defer src="./script.js"></script>
+  </head>
+
+  <body>
+    <header>
+      <section class="sitename">
+        <h1>Winc Movie Finder</h1>
+      </section>
+      <section class="filters_container">
+        <section class="radio_container">
+          <input
+            class="radio_btn"
+            type="radio"
+            name="film-filter"
+            id="filter--allmovies"
+            value="all"
+          />
+          <label for="filter--allmovies">All Movies</label>
+        </section>
+
+        <section class="radio_container">
+          <input
+            class="radio_btn"
+            type="radio"
+            name="film-filter"
+            id="filter--newestmovies"
+            value="latest"
+          />
+          <label for="filter--newestmovies">Latest Movies</label>
+        </section>
+        <section class="radio_container">
+          <input
+            class="radio_btn"
+            type="radio"
+            name="film-filter"
+            id="filter--avengers"
+            value="avengers"
+          />
+          <label for="filter--avengers">Avengers Movies</label>
+        </section>
+
+        <section class="radio_container">
+          <input
+            class="radio_btn"
+            type="radio"
+            name="film-filter"
+            id="filter--xmen"
+            value="xmen"
+          />
+          <label for="filter--xmen">X-Men Movies</label>
+        </section>
+        <section class="radio_container">
+          <input
+            class="radio_btn"
+            type="radio"
+            name="film-filter"
+            id="filter--princess"
+            value="princess"
+          />
+          <label for="filter--princess">Princess Movies</label>
+        </section>
+        <section class="radio_container">
+          <input
+            class="radio_btn"
+            type="radio"
+            name="film-filter"
+            id="filter--batman"
+            value="batman"
+          />
+          <label for="filter--batman">Batman Movies</label>
+        </section>
+        <section class="radio_container">
+          <section id="input__container">
+            <input
+              class="radio_btn"
+              type="text"
+              id="filter--search"
+              placeholder="searchterm in title"
+            />
+            <button id="clear-input" class="radio_btn">x</button>
+          </section>
+        </section>
+      </section>
+    </header>
+    <main id="container"></main>
+    <footer></footer>
+  </body>
+</html>
