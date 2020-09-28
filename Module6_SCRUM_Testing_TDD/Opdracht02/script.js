@@ -9,4 +9,4 @@ const klaarMetHuiswerk = () => {
   console.log(`Kijk Paps/Mams, ik ben klaar met mijn huiswerk!`);
 };
 
-huiswerkmaken("wiskund", klaarMetHuiswerk);
+huiswerkmaken("wiskunde", klaarMetHuiswerk);
