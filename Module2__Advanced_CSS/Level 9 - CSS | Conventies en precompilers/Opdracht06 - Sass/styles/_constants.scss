@@ -1,0 +1,12 @@
+$std-padding: 20px;
+$background-color1: #c0eea9;
+$background-color2: #97d279;
+$line-color: #000;
+
+@mixin text-styling($padding, $padding-bottom) {
+  text-align: justify;
+  line-height: 1.4em;
+  padding: $padding;
+  padding-bottom: $padding-bottom;
+
+}

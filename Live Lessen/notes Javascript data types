@@ -1,0 +1,60 @@
+Boolean:
+DATA TYPES:
+
+primitive datatypes kunnen maar 1 waarde bezitten.
+non-primitive datatypes (in JS altijd een Object) kunnen meerdere waarden bezitten.
+
+Strings met elkaar vergelijken gaat op alfabetische volgorde:
+
+aac < aap
+aaap < aap
+
+negation:
+
+!false === true;
+false === !true;
+false !== !false;
+
+probeer negation te voorkomen.
+
+Falsy values:
+
+Number 0
+keyworrd null
+keyword undefined
+Boolean false
+Number NaN
+string ''
+
+Undefined:
+wanner je zelf geen reurn valueopgeeft, is er altijd (impliciet) een: return ndefined.
+Functies hebben ALTIJD een return waarde.
+
+voorbeeld van handig gebruiken van return:
+
+const setBackground(value) => {
+document.body.style.background = value;
+return document.body.style;
+
+}
+setBackground('red').color = 'white';
+
+over Datatyper:
+
+ALLE non-primitieve datatypes zijn OBJECT in JS. Dus typeof een array = Object.
+
+om te checken of iets een array is:
+
+isArray
+console.log(isArray(array)); //true
+
+Objects:
+
+Keys:value pairs
+
+keys: zijn een string value - let dus op ''. als het 1 woord is kunnen deze worden wegelaten behalve in bracket notation.
+beginnen NIET met een getal
+mogen ook unicode strings zijn (emoji's dus).
+
+
+Key moet uniek zijn. Is dit niet zo dan wordt de eerste key met die naam overschreven door de tweede key met diezelfde naam.

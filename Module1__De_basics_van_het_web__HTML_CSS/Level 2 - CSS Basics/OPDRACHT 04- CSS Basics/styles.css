@@ -1,0 +1,72 @@
+body {
+  background: linear-gradient(to right, rgb(66, 37, 102), rgb(161, 128, 202));
+  color: whitesmoke;
+  font-family: "Lexend Peta", sans-serif;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+header {
+  border: solid 10px blueviolet;
+  border-style: ridge;
+  margin-top: 20px;
+  margin-right: 30px;
+  margin-bottom: 40px;
+  margin-left: 150px;
+  padding: 30px;
+}
+
+main {
+  border: solid 10px blueviolet;
+  border-style: ridge;
+  margin: 20px 30px 40px 150px;
+  padding: 30px;
+}
+
+footer {
+  border: solid 10px blueviolet;
+  border-style: ridge;
+  margin: 20px 30px 40px 150px;
+  padding: 30px;
+}
+
+.header {
+  color: hotpink;
+}
+
+.border {
+  border: solid 1px;
+  width: 60%;
+  text-align: center;
+}
+
+.banner {
+  background-color: rgb(246, 245, 248);
+  color: rgb(50, 30, 75);
+}
+
+article {
+  margin-top: 50px;
+  margin-bottom: 40px;
+}
+
+.list1 {
+  height: 150px;
+  width: 40%;
+  background-repeat: no-repeat;
+  background-image: url("./images/raindrops-roses.jpg");
+  background-color: pink;
+  color: rgb(27, 14, 43);
+  font-size: 1.1rem;
+}
+
+.image {
+  width: 250px;
+  margin: 0 auto;
+  box-shadow: 0 4px 8px 0 rgba(19, 18, 18, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  text-align: center;
+}

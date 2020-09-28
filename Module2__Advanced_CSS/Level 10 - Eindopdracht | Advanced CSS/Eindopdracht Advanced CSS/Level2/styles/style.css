@@ -1,0 +1,126 @@
+* {
+  margin: 0px;
+  padding: 0px;
+}
+
+body {
+  background-color: #c3cfe2;
+}
+.main__container {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+  width: 100%;
+  height: auto;
+  padding: 0px 20px;
+}
+
+.card {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  grid-template-rows: 1fr 1fr;
+  margin: 30px;
+  width: 300px;
+  border-radius: 5px;
+  padding-top: 30px;
+}
+
+
+.card__btn__container {
+  background-color: rgb(35, 44, 61);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-row: 1 / span2;
+  grid-column: 1 / span2;
+  width: 300px;
+  height: auto;
+  border-radius: 10px;
+  z-index: 1;
+}
+
+.card__btn {
+  padding: 10px;
+  max-width: 120px;
+  height: auto;
+  border-radius: 5px;
+  font-size: 1rem;
+}
+
+.topcard {
+  grid-row: 1 / span2;
+  grid-column: 1 / span2;
+  max-width: 250px;
+  height: auto;
+  border-radius: 10px;
+  background-color: white;
+  z-index: 2;
+  transition-duration: 350ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+  -webkit-box-pack: justify;
+  -ms-flex-pack: justify;
+  justify-content: space-between;
+  height: auto;
+  max-width: 370px;
+  background-color: #fff;
+  border-radius: 10px;
+}
+
+.topcard__text {
+  font-size: 1.4rem;
+  padding: 40px 40px 0px 40px;
+  color: #4e4e4e;
+}
+
+.topcard__imgcontainer {
+  display: grid;
+  grid-template-rows: repeat(3, 1fr);
+  height: 100px;
+  width: auto;
+  padding: 0px;
+}
+
+.topcard__img {
+  background-color: rgb(20, 20, 20);
+  max-width: 130px;
+  border-radius: 100%;
+  border: solid 5px white;
+  margin: 0px;
+  -ms-grid-column: 2;
+  -ms-grid-column-span: 1;
+  grid-column: 2/3;
+  -ms-grid-row: 1;
+  -ms-grid-row-span: 4;
+  grid-row: 1/5;
+  padding: 0px;
+  -webkit-transform: translate(0px, 30px);
+  transform: translate(0px, 30px);
+}
+
+.topcard__footer {
+  height: auto;
+  border-radius: 0px 0px 10px 10px;
+  background-color: #686de0;
+  color: white;
+  text-align: center;
+  padding: 100px 0px 30px 0px;
+}
+
+.topcard__footer__h1 {
+  font-size: 1.5rem;
+}
+
+.topcard__footer__h3 {
+  font-size: 1.3rem;
+  color: #dad8d8;
+  line-height: 2rem;
+}
+
+.topcard:hover {
+  opacity: 0;
+}

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html>
+  <head> 
+      
+  </head>
+
+  <body>
+    //block element take up entire width of page //inline elements take up only
+    as much space as they need.
+
+    <span>span is an inline container</span>
+    <span>span is an inline container</span>
+    <span>span is an inline container</span>
+
+    <div>divs are block elements</div>
+    <div>divs are block elements</div>
+    <div>divs are block elements</div>
+  </body>
+</html>

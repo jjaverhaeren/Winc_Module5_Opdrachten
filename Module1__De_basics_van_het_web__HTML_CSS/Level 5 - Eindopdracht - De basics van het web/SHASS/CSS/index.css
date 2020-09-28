@@ -1,0 +1,190 @@
+body html {
+  margin: 0px;
+  height: 100%;
+  font-family: "Cabin", sans-serif;
+}
+
+/* BEGIN CENTER */
+.main__container {
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr;
+  grid-template-rows: 4fr 4fr 6fr;
+  justify-items: center;
+}
+
+.slogan__container {
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  justify-items: center;
+  margin: 90px auto 90px auto;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: repeat(3, 1fr);
+  font-family: Cabin;
+  font-weight: 400;
+  font-size: 2.2rem;
+}
+
+.strong {
+  /* background-color: red; */
+  margin: 0px;
+  padding: 0px;
+}
+
+.healthy {
+  /* background-color: yellow; */
+  margin: 0;
+}
+
+.happy {
+  /* background-color: blue; */
+  margin: 0;
+}
+
+.twist {
+  display: block;
+  font-family: Cabin;
+  font-weight: 400;
+}
+
+.shass {
+  display: block;
+  font-family: Cabin;
+  font-weight: 400;
+  font-size: 1.2rem;
+  margin: 5px;
+}
+
+p {
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  justify-items: center;
+  max-width: 400px;
+  text-align: center;
+}
+
+.snel {
+  display: block;
+  font-family: Cabin;
+  font-weight: 400;
+  margin: 5px 0px 0px 0px;
+}
+
+.team_container {
+  width: 100%;
+  grid-column: 1 / 4;
+  grid-row: 3 / 4;
+  display: grid;
+  grid-template-columns: 1fr 5fr 1fr 1fr;
+  grid-template-rows: 1fr 4fr 4fr;
+  margin: 0px auto 60px auto;
+}
+
+.team {
+  grid-column: 1 / span3;
+  grid-row: 3 / 4;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(193, 226, 221);
+  color: rgb(66, 34, 100);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 0 auto;
+}
+
+.saskia {
+  display: flex;
+
+  background-color: rgb(245, 237, 190);
+  color: rgb(214, 45, 96);
+  width: 100%;
+  grid-column: 1 / span3;
+  grid-row: 4 / 5;
+  font-family: Cabin;
+  margin: 0 auto;
+}
+
+.img_saskia {
+  max-width: 200px;
+  margin: 0 20px 0 100px;
+}
+
+.intro_saskia {
+  justify-self: center;
+  align-self: center;
+}
+.fleur {
+  display: flex;
+  flex-direction: row-reverse;
+  background-color: rgb(247, 204, 212);
+  color: rgb(66, 34, 100);
+  width: 100%;
+  grid-column: 1 / 5;
+  grid-row: 5 / 6;
+  font-family: Cabin;
+  margin: 0px auto 0px auto;
+}
+
+.img_fleur {
+  max-width: 200px;
+  margin: 0 100px 0 20px;
+  grid-column: 3 / 4;
+  grid-row: 5 / 6;
+  justify-self: end;
+}
+
+.intro_fleur {
+  justify-self: center;
+  align-self: center;
+}
+
+.copyright {
+  grid-column: 1 / 5;
+  grid-row: 6 / 7;
+  width: 100%;
+  height: 50px;
+  background-color: rgb(193, 226, 221);
+  font-family: Cabin;
+  color: rgb(66, 34, 100);
+}
+
+.copyright > h6 {
+  padding: 0px 0px 0px 20px;
+}
+/* EINDE CENTER */
+
+/* BEGIN FOOTER */
+
+a > img {
+  max-width: 40px;
+}
+
+.social__container {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  padding: 15px 0px;
+}
+
+.social {
+  background-color: white;
+  width: 70%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+@media screen and (max-width: 400px) {
+  .img_saskia {
+    display: none;
+  }
+
+  .img_fleur {
+    display: none;
+  }
+}

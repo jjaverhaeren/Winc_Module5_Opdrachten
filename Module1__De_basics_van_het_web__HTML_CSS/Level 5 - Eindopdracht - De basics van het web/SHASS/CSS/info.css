@@ -1,0 +1,102 @@
+body html {
+    margin: 0px;
+    height: 100%;
+    font-family: "Cabin", sans-serif;
+  }
+  
+  
+  
+  /* BEGIN SLOGAN */
+  
+  .main__container {
+    
+    display: grid;
+    grid-template-columns: 1fr 5fr 1fr;
+    grid-template-rows: 1fr 3fr 1fr 2fr;
+    justify-items: center;
+  }
+
+  .wil {
+   
+    grid-column: 2 / 3;
+    grid-row: 1 / 2;
+    padding: 0px;
+    font-family: Cabin;
+  }
+  
+  .slogan__container {
+
+    grid-column: 2 / 3;
+    grid-row: 2 / 3;
+    justify-items: center;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat(3, 1fr);
+    font-family: Cabin;
+    font-weight: 400;
+    font-size: 2.2rem;
+  }
+  
+  .strong {
+    /* background-color: red; */
+    margin: 0;
+  }
+  
+  .healthy {
+    /* background-color: yellow; */
+    margin: 0;
+  }
+  
+  .happy {
+    /* background-color: blue; */
+    margin: 0;
+  }
+  
+  .zijn {
+   
+    grid-column: 2 / 3;
+    grid-row: 3 / 4;
+    font-family: Cabin;
+  }
+
+  .vul {
+   
+      grid-column: 2 / 3;
+      grid-row: 4 / 5;
+  }
+
+  .snel {
+    font-family: Cabin;
+    text-align: center;
+  }
+  /* EINDE SLOGAN */
+  
+  /* BEGIN FOOTER */
+  
+ 
+  
+  
+  a > img {
+    max-width: 40px;
+  }
+  
+  .social__container {
+    background-color: white;
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    height: auto;
+    width: 100%;
+    padding: 15px 0px;
+  }
+  
+  .social {
+      background-color: white;
+      width: 70%;
+      max-width: 400px;
+      display: flex;
+      justify-content: space-between;
+      margin: 0 auto;
+    }
+  

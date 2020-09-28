@@ -1,0 +1,121 @@
+body html {
+  margin: 0px;
+  height: 100%;
+  font-family: "Cabin", sans-serif;
+}
+
+/* BEGIN CENTER */
+.main__container {
+  max-width: 800px;
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: 1fr 2fr 1fr 1fr 1fr;
+
+  /* justify-items: center; */
+}
+
+.cart_title {
+  /* border: solid 3px red; */
+  grid-column: 2 / 4;
+  grid-row: 1 / 2;
+  display: flex;
+  align-items: center;
+  margin: 20 auto;
+  font-family: Cabin;
+  font-size: 3rem;
+  letter-spacing: 0.15rem;
+}
+
+.img_product {
+  /* border: solid 3px red; */
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  max-width: 200px;
+  margin: 0px 10px 0px 10px;
+  box-shadow: 0 4px 8px 0 rgba(19, 18, 18, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.product_info {
+  /* border: solid 3px red; */
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+  margin: 0px 10px 0px 10px;
+}
+
+.plusmin {
+  /* border: solid 3px red; */
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  max-width: 200px;
+}
+
+.price {
+  /* border: solid 3px red; */
+  grid-column: 3 / 4;
+  grid-row: 3 / 4;
+  display: flex;
+  padding: 30px;
+  margin: 0 auto;
+  font-family: Cabin;
+  font-size: 2rem;
+  letter-spacing: 0.15rem;
+}
+
+.payment {
+  /* border: solid 3px red; */
+  grid-column: 2 / 4;
+  grid-row: 4 / 5;
+  max-width: 300px;
+}
+
+.pay {
+  /* border: solid 3px red; */
+  grid-column: 2 / 4;
+  grid-row: 5 / 6;
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  margin: 0px 0px 100px 0px;
+  color: rgb(199, 177, 178);
+  justify-self: center;
+  background-color: rgb(0, 107, 219);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+  font-family: Cabin;
+  letter-spacing: 0.2rem;
+}
+
+.pay:hover {
+  background-color: rgb(20, 117, 221);
+  border-left: solid 1px rgb(0, 86, 179);
+  border-top: solid 1px rgb(0, 86, 179);
+}
+
+/* EINDE CENTER */
+
+/* BEGIN FOOTER */
+
+a > img {
+  max-width: 40px;
+}
+
+.social__container {
+  background-color: white;
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  padding: 15px 0px;
+}
+
+.social {
+  background-color: white;
+  width: 70%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}

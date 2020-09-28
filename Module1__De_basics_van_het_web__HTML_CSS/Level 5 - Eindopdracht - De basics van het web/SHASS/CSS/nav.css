@@ -1,0 +1,202 @@
+/* BEGIN NAV */
+
+nav {
+  height: 200px;
+}
+
+nav > a {
+  text-decoration: none;
+}
+
+h5 {
+  margin: 40px auto;
+  font-family: Cabin;
+  font-weight: 400;
+}
+
+.nav__container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+}
+.nav__info {
+  background-color: rgb(0, 107, 219);
+  color: rgb(238, 229, 229);
+  text-align: center;
+  grid-column: 1 / 2;
+  grid-row: 2 / 3;
+  
+}
+
+.nav__info:hover {
+  background-color: rgb(20, 117, 221);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav__munt {
+  background-color: rgb(193, 226, 221);
+  color: rgb(69, 38, 33);
+  text-align: center;
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  max-height: 100px;
+}
+
+.nav__munt:hover {
+  background-color: rgb(205, 241, 236);
+  color: rgb(46, 25, 22);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav__aardbei {
+  background-color: rgb(244, 190, 200);
+  color: rgb(230, 80, 124);
+  text-align: center;
+  grid-column: 3 / 4;
+  grid-row: 2 / 3;
+}
+
+.nav__aardbei:hover {
+  background-color: rgb(247, 204, 212);
+  color: rgb(211, 73, 114);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav__bosvruchten {
+  background-color: rgb(244, 128, 178);
+  color: rgb(66, 34, 100);
+  text-align: center;
+  grid-column: 4 / 5;
+  grid-row: 2 / 3;
+}
+
+.nav__bosvruchten:hover {
+  background-color: rgb(248, 148, 191);
+  color: rgb(52, 26, 80);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav__vanille {
+  background-color: rgb(245, 237, 190);
+
+  color: rgb(98, 54, 23);
+  text-align: center;
+  grid-column: 1 / 2;
+  grid-row: 1 / 2;
+}
+
+.nav__vanille:hover {
+  background-color: rgb(255, 250, 222);
+  color: rgb(71, 39, 16);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav__appel {
+  background-color: rgb(168, 100, 70);
+  color: rgb(125, 24, 27);
+  text-align: center;
+  grid-column: 3 / 4;
+  grid-row: 1 / 2;
+}
+
+.nav__appel:hover {
+  background-color: rgb(194, 116, 83);
+  color: rgb(82, 15, 17);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav__cafe {
+  background-color: rgb(211, 189, 175);
+  color: rgb(22, 11, 2);
+  text-align: center;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+}
+
+.nav__cafe:hover {
+  background-color: rgb(223, 208, 199);
+  color: rgb(0, 0, 0);
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+.nav__cart {
+  background-color: rgb(0, 107, 219);
+  color: rgb(238, 229, 229);
+  text-align: center;
+  grid-column: 4 / 5;
+  grid-row: 1 / 2;
+}
+
+.nav__cart:hover {
+  background-color: rgb(20, 117, 221);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+
+@media screen and (min-width: 1024px) {
+  nav {
+    height: 100px;
+  }
+
+  .nav__container {
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    /* max-width: 1024px;
+      margin: 0 auto; */
+  }
+
+  .nav__info {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__munt {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__aardbei {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__bosvruchten {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__vanille {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__appel {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__cafe {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__cart {
+    grid-column: unset;
+    grid-row: unset;
+  }
+
+  .nav__cart:hover {
+    background-color: rgb(20, 117, 221);
+    color: white;
+    font-size: 1.1rem;
+    font-weight: 600;
+  }
+}

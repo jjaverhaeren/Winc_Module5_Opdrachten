@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>SHASS! Info</title>
+    <link rel="shortcut icon" href="./Images/circle.ico" type="image/x-icon">
+    <link rel="stylesheet" href="./CSS/info.css" type="text/css" />
+    <link rel="stylesheet" href="./CSS/nav.css" type="text/css" />
+    <link rel="stylesheet" href="./CSS/form.css" type="text/css">
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cabin:wght@400;500;600;700&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <header>
+      <nav class="nav__container">
+        <a href="./index.html" class="nav__info"><h5>HOME</h5></a>
+        <a href="./prod_munt.html" class="nav__munt"><h5>Munt Chocolade</h5></a>
+        <a href="./prod_aardbei.html" class="nav__aardbei"
+          ><h5>Frisse Aardbei</h5></a
+        >
+        <a href="./prod_bosvruchten.html" class="nav__bosvruchten"
+          ><h5>Bosvruchten</h5></a
+        >
+        <a href="./prod_vanille.html" class="nav__vanille"
+          ><h5>Romige Vanille</h5></a
+        >
+        <a href="./prod_appel.html" class="nav__appel"><h5>Appel Kaneel</h5></a>
+        <a href="./prod_cafe.html" class="nav__cafe"><h5>Cafe Latte</h5></a>
+        <a href="./cart.html" class="nav__cart"><h5>Winkelwagen</h5></a>
+      </nav>
+    </header>
+    <main class="main__container">
+      <h3 class="wil">Wil je ook</h3>
+      <section class="slogan__container">
+        <h1 class="strong">STRONG</h1>
+        <h1 class="healthy">HEALTHY</h1>
+        <h1 class="happy">HAPPY</h1>
+      </section>
+      <h3 class="zijn">zijn?</h3>
+      <p class="vul">
+        Vul dan hieronder de vragenlijst in. <br />We zullen zo snel mogelijk
+        contact met je opnemen. <br /><span class="snel"
+          >Tot snel bij SHASS!</span
+        >
+      </p>
+    </main>
+
+    <form class="form_container" name="formulier" method="POST" data-netlify="true">
+      <p class="form_name">
+        <label class="label_name"
+          >Naam: <br><input class="input_name" type="text" name="name" autofocus required
+        /></label>
+      </p>
+
+      <p class="form_email">
+        <label class="label_email" >Email: <br><input class="input_email" type="text" name="email" required /></label>
+      </p>
+
+      <p class="form_tel">
+        <label class="label_tel"
+          >Tel: <br><input class="input_tel" type="tel" name="tel" placeholder="0031-612345678"
+        /></label>
+      </p>
+
+      <p class="form_age">
+        <label class="label_age">Leeftijd: <br><input class="input_age" type="number" name="age" /></label>
+      </p>
+
+      <p class="form_dob">
+        <label class="label_dob" >Geb.datum: <br><input class="input_dob" type="date" name="dob" /></label>
+      </p>
+
+      <p class="form_gender">
+        <label class="label_gender"
+          >Geslacht:<br />
+          <input type="radio" name="gender" value="male" /><label for="male">Man</label>
+          <br />
+          <input type="radio" name="gender" value="female" />
+          <label for="female">Vrouw</label>
+          <br />
+          <input type="radio" name="gender" value="other" />
+          <label for="other">Anders</label>
+          <br />
+        </label>
+      </p>
+
+      <p class="form_sport">
+        <label class="label_sport"
+          >Hoe vaak per week sport je:<br>
+          <input type="radio" name="sport" /><label>Nooit</label><br>
+          <input type="radio" name="sport" /><label>1 à 2 keer</label><br>
+          <input type="radio" name="sport" /><label>3 à 4 keer</label><br>
+          <input type="radio" name="sport" /><label>Bijna elke dag</label><br>
+        </label>
+      </p>
+
+      <p class="form_goal">
+        <label class="label_goal"
+          >Wat is jouw doel:<br><textarea
+            name="bio"
+            maxlength="200"
+            placeholder="max. 200 tekens"
+          ></textarea>
+        </label>
+      </p>
+
+      <br />
+      <p class="form_submit">
+        <input class="submit" type="submit" name="submit" />
+      </p>
+      <p class="form_reset">
+        <input class="reset" type="reset" name="reset" />
+      </p>
+
+      
+    </form>
+
+    <footer class="footer__container">
+      
+
+      <section class="social__container">
+        <section class="social">
+          <a href="https://www.instagram.com/?hl=nl" class="instagram"
+            ><img src="./Images/social/insta.png" alt="instagram logo"
+          /></a>
+          <a href="https://nl-nl.facebook.com/" class="facebook"
+            ><img src="./Images/social/fb.png" alt="facebook logo"
+          /></a>
+          <a href="https://twitter.com/?lang=nl" class="twitter"
+            ><img src="./Images/social/twitter.png" alt="twitter logo"
+          /></a>
+          <a href="https://nl.pinterest.com/" class="pinterest"
+            ><img src="./Images/social/pint.png" alt="pinterest logo"
+          /></a>
+        </section>
+      </section>
+    </footer>
+  </body>
+</html>

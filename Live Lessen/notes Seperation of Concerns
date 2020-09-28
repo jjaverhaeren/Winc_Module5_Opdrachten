@@ -1,0 +1,18 @@
+ieder deel van het systeem heeft een eigen verantwoordelijkheid.
+
+Een logische verdeling zou zijn:
+
+content - HTML
+design - CSS
+behaviour - JS
+
+wikipedia: single-rsponsibility_principle
+wikipedia: don't repeat yourself - DRY
+csszengarden
+
+Voorbeeld:
+
+gedrag prgrammeren door niet direct via JavaScript de style aante pasen maar beter door met JS een andere class toe te voegen aan het element. In CSS wordt dan nog steeds de styling aangepast.
+
+Binnen JS ook seperation of concerns aanmaken.
+bijv. verschil tussen calculations en changing the DOM - waar nodig aparte scripts.

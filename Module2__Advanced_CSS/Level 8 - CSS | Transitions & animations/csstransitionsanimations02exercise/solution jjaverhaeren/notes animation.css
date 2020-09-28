@@ -1,0 +1,17 @@
+.class {
+    position: absolute;
+    /* position absolute is relative to parent. Default parent is <body>. Make element parent by position: relative; */
+    top: -40px;
+    left: 0px;
+    animation-name: drive;
+    /* see keyframes name = animation-name: ; */
+    animation-duration: 3s;
+    animation-fill-mode: both;
+    /* /see from and to at keyframes */
+    animation-iteration-count: infinite;
+}
+
+@keyframes drive {
+    from{ transform: translateX(-200px)}
+    to{ transform: translateX(1000px)}
+}

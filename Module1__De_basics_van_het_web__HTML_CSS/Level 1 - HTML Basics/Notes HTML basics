@@ -1,0 +1,34 @@
+<html>
+  <head> </head>
+
+  <body>
+    //basics structure - semantic HTML:
+    <header>
+      <nav></nav>
+    </header>
+    <main>
+      <article>
+        <section></section>
+        <section>
+          <aside>not directly related to content</aside>
+        </section>
+      </article>
+    </main>
+
+    <a href="" target="_blank"> </a>
+    <img width="100" height="100" src="" alt="description" />
+
+    //img als link naar iets:
+
+    <a href="" target="blank">
+      <img width="100" height="100" src="" alt="description" />
+    </a>
+
+    //video tag:
+
+    <video src="" poster="" controls></video>
+
+    //poster: geeft een thumbnail image van de video. //autoplay: autoplay bij
+    openen. //loop: loop bij openen.
+  </body>
+</html>

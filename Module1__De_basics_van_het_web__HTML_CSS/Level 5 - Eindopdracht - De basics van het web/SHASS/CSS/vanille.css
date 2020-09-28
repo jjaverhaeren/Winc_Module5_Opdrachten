@@ -1,0 +1,134 @@
+body html {
+  margin: 0px;
+  height: 100%;
+}
+
+body {
+  background-color: rgb(255, 251, 224);
+  font-family: "Cabin", sans-serif;
+}
+
+.nav__vanille {
+  border-top: solid 1px rgba(100, 53, 23, 0.1);
+  border-left: solid 1px rgba(100, 53, 23, 0.1);
+}
+
+.vanille__container {
+  display: grid;
+  grid-template-columns: 1fr 3fr 1fr;
+  grid-template-rows: repeat(4, auto);
+  justify-content: center;
+}
+
+.vanille_shake_img {
+  width: 400px;
+  margin: 100px auto 20px auto;
+  grid-column: 2 / 3;
+  grid-row: 1 / 2;
+  box-shadow: 0 4px 8px 0 rgba(19, 18, 18, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.vanille_price {
+  color: rgb(100, 53, 23);
+  grid-column: 2 / 3;
+  grid-row: 2 / 3;
+  text-align: left;
+  justify-self: center;
+  font-size: 1.5rem;
+  margin: 0px 0px 20px 0px;
+}
+
+#vanille_info_header,
+#voordelen {
+  text-decoration: underline;
+  margin: 10px 0px;
+}
+
+.vanille_info {
+  width: 80%;
+  color: rgb(100, 53, 23);
+  grid-column: 2 / 3;
+  grid-row: 4 / 5;
+  justify-self: center;
+  text-align: left;
+  font-size: 14px;
+  margin: 40px auto 100px auto;
+}
+
+.ad_to_cart {
+  width: 100%;
+  height: auto;
+  padding: 0px;
+  color: rgb(199, 177, 178);
+  grid-column: 2 / 3;
+  grid-row: 3 / 4;
+  justify-self: center;
+  background-color: rgb(0, 107, 219);
+  color: white;
+  text-align: center;
+  font-size: 1rem;
+}
+
+.ad_to_cart:hover {
+  background-color: rgb(20, 117, 221);
+  border-left: solid 1px rgb(0, 86, 179);
+  border-top: solid 1px rgb(0, 86, 179);
+}
+
+/* BEGIN FOOTER */
+
+a > img {
+  max-width: 40px;
+}
+
+.social__container {
+  background-color: rgb(255, 251, 224);
+  position: fixed;
+  left: 0;
+  bottom: 0;
+  height: auto;
+  width: 100%;
+  padding: 15px 0px;
+}
+
+.social {
+  background-color: rgb(255, 251, 224);
+  width: 70%;
+  max-width: 400px;
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+}
+
+@media screen and (min-width: 1024px) {
+
+  .nav__vanille {
+    border-bottom: solid 1px rgba(100, 53, 23, 0.1);
+  }
+
+  .vanille__container {
+    background-image: url("../Images/products/Vanille\ Persona\ EDIT2.jpeg");
+    background-repeat: no-repeat;
+    margin: 10px 0 0 0;
+  }
+
+  .vanille_shake_img {
+    grid-column: 3 / 4;
+  }
+
+  .vanille_price {
+    grid-column: 3 / 4;
+  }
+
+  .vanille_info {
+    background-color: rgb(255, 251, 224);
+    grid-column: 1 / span3;
+    margin: 120px 0px 200px 0px;
+    padding: 10px;
+  }
+
+  .ad_to_cart {
+    grid-column: 3 / 4;
+  }
+}

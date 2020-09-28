@@ -1,0 +1,222 @@
+html {
+  font-size: 100%;
+}
+
+body {
+  background: linear-gradient(to right, rgb(66, 37, 102), rgb(161, 128, 202));
+  color: whitesmoke;
+  font-family: "Lexend Peta", sans-serif;
+  margin: auto;
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  color: rgba(18, 236, 83, 0.89);
+}
+
+header {
+  margin: 20px;
+  border: solid 10px blueviolet;
+  border-style: ridge;
+  padding: 10px;
+  text-align: center;
+}
+
+main {
+  margin: 20px;
+  border: solid 10px blueviolet;
+  border-style: ridge;
+  padding: 0px 20px 20px 20px;
+}
+
+footer {
+  margin: 20px;
+  border: solid 10px blueviolet;
+  border-style: ridge;
+  padding: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+nav {
+  margin: 15px;
+}
+
+li {
+  display: inline;
+  padding: 10px;
+}
+
+p {
+  padding: 10px;
+  font-size: 1.3rem;
+  font-family: "Courier New", Courier, monospace;
+  line-height: 1.5rem;
+}
+
+article {
+  margin: 20px auto;
+  text-align: left;
+  border: solid lightgreen;
+}
+
+h1 {
+  margin: 20px auto 0px auto;
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+h2 {
+  margin: 0px auto;
+  padding: 10px;
+  font-size: 0.8rem;
+  text-align: center;
+}
+
+h3 {
+  margin: 5px auto;
+  padding: 5px 5px 5px 20px;
+  font-size: 1rem;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  font-weight: 700;
+  color: black;
+  background-color: rgb(197, 227, 197);
+}
+
+.favorites a {
+  display: block;
+  text-align: left;
+  color: black;
+  font-family: "Franklin Gothic Medium", "Arial Narrow", Arial, sans-serif;
+  line-height: 0.5em;
+  letter-spacing: 0.4em;
+  font-weight: 700;
+}
+
+.list1 {
+  height: auto;
+  width: auto;
+  margin: 0px auto;
+  padding: 10px 20px;
+  background-image: url("./images/raindrops-roses.jpg");
+  background-repeat: no-repeat;
+  background-color: rgb(148, 112, 186);
+  font-size: 1.1rem;
+  border: solid lightgreen;
+}
+
+.image {
+  box-shadow: 0 4px 8px 0 rgba(19, 18, 18, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.image2 {
+  width: 30%;
+  min-width: 160px;
+  margin-bottom: 10px;
+  box-shadow: 0 4px 8px 0 rgba(19, 18, 18, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+label {
+  margin: 0px 20px;
+  display: block;
+}
+
+.name {
+  margin: 0px;
+  display: block;
+}
+
+.email {
+  margin: 0px;
+  display: block;
+}
+
+.send {
+  display: block;
+  margin: 17px;
+}
+
+textarea {
+  display: block;
+}
+
+.container {
+  padding: 15px;
+  display: flex;
+  flex-flow: row-reverse wrap-reverse;
+  justify-content: center;
+  align-items: center;
+}
+
+.blogpost {
+  width: auto;
+  border: 1px solid black;
+  margin: 5px;
+  border: solid 2px yellow;
+}
+
+div > img {
+  box-shadow: 0 4px 8px 0 rgba(19, 18, 18, 0.2),
+    0 6px 20px 0 rgba(0, 0, 0, 0.19);
+  margin: 3px;
+}
+
+div > h1 {
+  padding: 10px;
+  color: rgb(241, 234, 234);
+  text-align: left;
+}
+
+.post4,
+.post1 {
+  flex-grow: 2;
+}
+
+.post5 {
+  justify-self: end;
+  align-self: end;
+
+  flex-grow: 1;
+}
+
+.blogpost > img {
+  margin: 10px;
+}
+
+@media screen and (min-width: 1024px) {
+  body {
+    max-width: 970px;
+    background: linear-gradient(to right, rgb(161, 128, 202), rgb(66, 37, 102));
+  }
+
+  h1,
+  h2 {
+    color: yellow;
+  }
+
+  .list1 {
+    background-color: rgb(65, 38, 95);
+  }
+
+  p {
+    font-size: 1rem;
+    line-height: 1.1rem;
+    color: yellow;
+  }
+
+  a {
+    color: yellow;
+  }
+}
+
+@media screen and (max-width: 800px) {
+  .blogpost {
+    flex-grow: 1;
+  }
+}

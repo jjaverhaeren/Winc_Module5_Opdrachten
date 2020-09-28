@@ -1,0 +1,38 @@
+/* 
+styling van formulieren
+*/
+
+/* styling van text input field: */
+.my-form input[type="text"] {
+  padding: 8px;
+}
+
+/* styling van submit button: */
+.my-form input[type="submit"] {
+  padding: 8px;
+  width: 100%;
+}
+
+/* styling van text area: */
+.my-form textarea {
+  padding: 10px;
+}
+
+/* Bijbehorende HTML:
+
+<form class="my-form">
+    <div class="form-group">
+        <label>Name:</label>
+        <input type="text" name="name">
+    </div>
+    <div class="form-group">
+        <label>Email:</label>
+        <input type="text" name="email">
+    </div>
+    <div class="form-group">
+        <label>Message:</label>
+        <textarea name="message"></textarea>
+    </div>
+    <input class="button type="submit" value="Submit" name="">
+</form>
+

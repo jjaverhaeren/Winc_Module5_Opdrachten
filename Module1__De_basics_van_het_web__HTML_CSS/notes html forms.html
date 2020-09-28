@@ -1,0 +1,92 @@
+// notes HTML formulieren:
+
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div >
+      <input style="display: block;" type="text" value="invullen"/>
+      <input style="display: block;" type="password" />
+      <input style="display: block;" type="date" />
+      <input style="display: block;" type="email" />
+      <input style="display: block;" type="file" />
+      <input style="display: block;" type="submit" />
+    </div>
+
+    <div>
+      <form>
+        <input type="submit" />
+      </form>
+    </div>
+
+    <input type="checkbox" />
+    <input type="radio" />
+
+    <input name="button" type="radio" />
+    <input name="button" type="radio" />
+
+    // twee radio buttons met dezelfde name attribute: Op de site kan er dan
+    maar 1 van de twee worden gekozen.
+
+    <input type="text" value="enter your name" /> //default tekst in inputveld.
+
+    <textarea rows="10" cols="30"> </textarea>
+
+
+#HTML forms
+Code an HTML form into any page on your site, add a netlify attribute or data-netlify="true" to the <form> tag, and you can start receiving submissions in your Netlify site admin panel.
+
+Your form's name attribute determines what we call the form in the Netlify app interface. If you have more than one form on a site, each form should have a different name attribute.
+
+Here's an example:
+
+<form name="contact" method="POST" data-netlify="true">
+  <p>
+    <label>Your Name: <input type="text" name="name" /></label>   
+  </p>
+  <p>
+    <label>Your Email: <input type="email" name="email" /></label>
+  </p>
+  <p>
+    <label>Your Role: <select name="role[]" multiple>
+      <option value="leader">Leader</option>
+      <option value="follower">Follower</option>
+    </select></label>
+  </p>
+  <p>
+    <label>Message: <textarea name="message"></textarea></label>
+  </p>
+  <p>
+    <button type="submit">Send</button>
+  </p>
+</form>
+
+<input type="button">
+<input type="checkbox">
+<input type="color">
+<input type="date">
+<input type="datetime-local">
+<input type="email">
+<input type="file">
+<input type="hidden">
+<input type="image">
+<input type="month">
+<input type="number">
+<input type="password">
+<input type="radio">
+<input type="range">
+<input type="reset">
+<input type="search">
+<input type="submit">
+<input type="tel">
+<input type="text">
+<input type="time">
+<input type="url">
+<input type="week">
+
+  </body>
+</html>

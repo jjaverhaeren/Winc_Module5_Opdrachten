@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Formulier</title>
+  </head>
+  <body>
+    <header></header>
+
+    <main>
+      <br />
+      <form name="formulier" method="POST" data-netlify="true">
+        <p>
+          <label
+            >Naam: <input type="text" name="name" autofocus required
+          /></label>
+        </p>
+
+        <p>
+          <label>Email: <input type="text" name="email" required /></label>
+        </p>
+
+        <p>
+          <label
+            >Tel: <input type="tel" name="tel" placeholder="0031-612345678"
+          /></label>
+        </p>
+
+        <p>
+          <label>Leeftijd: <input type="number" name="age" /></label>
+        </p>
+
+        <p>
+          <label>Geb.datum: <input type="date" name="dob" /></label>
+        </p>
+
+        <p>
+          <label
+            >Geslacht:<br />
+            <label for="male">Man</label>
+            <input type="radio" name="gender" value="male" /><br />
+            <label for="female">Vrouw</label>
+            <input type="radio" name="gender" value="female" /><br />
+            <label for="other">Anders</label>
+            <input type="radio" name="gender" value="other" /><br />
+          </label>
+        </p>
+
+        <p>
+          <label
+            >Favoriete keuken:
+            <label>frans<input type="checkbox" name="frans" /></label>
+            <label>italiaans<input type="checkbox" name="italiaans" /></label>
+            <label>spaans<input type="checkbox" name="spaans" /></label>
+            <label>arabisch<input type="checkbox" name="arabisch" /></label>
+          </label>
+        </p>
+
+        <p>
+          <label for="favcolor">Favoriete kleur voor shorts:</label>
+          <input type="color" id="favcolor" name="favcolor" value="#ff0000" />
+        </p>
+
+        <p>
+          <label>Biografie:<textarea name="bio"></textarea></label>
+        </p>
+
+        <p>
+          <label
+            >Upload recept:<input type="file" name="recept" multiple
+          /></label>
+        </p>
+
+        <p>
+          <label
+            >Link naar mijn recepten:<input
+              type="url"
+              name="url"
+              placeholder="http://www.url.com"
+          /></label>
+        </p>
+
+        <br />
+        <p>
+          <input type="reset" name="reset" />
+        </p>
+
+        <p>
+          <input type="submit" name="submit" />
+        </p>
+      </form>
+    </main>
+
+    <footer></footer>
+  </body>
+</html>
