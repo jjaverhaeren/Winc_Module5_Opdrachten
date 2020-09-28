@@ -45,15 +45,15 @@ const filterByInput = () => {
   addMoviesToDOM(movies);
 };
 
-inputElement.oninput = filterByInput;
-
+inputElement.addEventListener("input", filterByInput);
 
 const inputClearBtn = document.getElementById("clear-input");
 const clearInput = () => {
-  inputElement.value = '';
+  inputElement.value = "";
 };
 
-inputClearBtn.onclick = clearInput;
+// inputClearBtn.onclick = clearInput;
+inputClearBtn.addEventListener("click", clearInput);
 
 const handleOnChangeEvent = (e) => {
   let target = e.target;
