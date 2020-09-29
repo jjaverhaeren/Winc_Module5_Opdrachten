@@ -13,6 +13,9 @@ function getPosts() {
   }, 1000);
 }
 
+//In plaats van de callback maak je nieuwe promise in de functie die als eerste dient te worden uitgevoerd.
+//na het beschrijven van de promise geef je een .then met de functie die na het resolven van de promise dient te worden uitgevoerd.
+
 function createPost(post) {
   return new Promise((resolve, reject) => {
     setTimeout(() => {
@@ -29,8 +32,8 @@ function createPost(post) {
   });
 }
 
-// createPost({title: 'Post Three', body: `This is post three`})
-// .then(getPosts)
+createPost({ title: "post Three", body: "This is post three" }).then(getPosts);
+
 // .catch(err => console.log(err));
 
 //Promise.all:
