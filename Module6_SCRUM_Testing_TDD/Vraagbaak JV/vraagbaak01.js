@@ -1,4 +1,4 @@
-const getBirthdayFinal = () => {
+const getBirthdayFinal = (person) => {
   let birthdayString = person.birthday.mdy.split("");
   let birthMonth = [];
   birthMonth.push(birthdayString[0]);
@@ -28,7 +28,7 @@ const addZodiacToPerson = () => {
       // let birthdayFinal = birthMonth.concat(birthDay).join("");
       // // log(birthdayFinal)
       // // return birthdayFinal;
-      let birthdayFinal = getBirthdayFinal();
+      let birthdayFinal = getBirthdayFinal(person);
 
       if (
         person.age >= 18 &&
