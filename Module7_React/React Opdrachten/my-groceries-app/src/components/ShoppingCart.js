@@ -6,7 +6,9 @@ function ShoppingCart(props) {
     <div className="shoppingCart">
       <h3>Shopping Cart</h3>
       <List items={props.items2} />
-      <button onClick={props.emptyCart} className="empty">Empty Cart</button>
+      <button onClick={props.emptyCart} className="empty">
+        Empty Cart
+      </button>
     </div>
   );
 }

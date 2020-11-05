@@ -6,10 +6,9 @@ function Inputfield(props) {
       <input
         type="text"
         className="input_field"
-        // onChange={props.handleChangeInput}
+        onChange={props.handleChangeInput}
         name="inputvalue"
         placeholder="new item"
-        // value={props.inputvalue}
       />
       <button type="submit">Add</button>
     </form>
