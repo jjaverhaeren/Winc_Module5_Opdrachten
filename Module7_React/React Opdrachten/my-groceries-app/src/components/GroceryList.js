@@ -1,10 +1,15 @@
 import React from "react";
 import List from "./List";
+import InputField from "./InputField"
 
 function GroceryList(props) {
   return (
     <div className="groceryList">
       <h3>Grocery List</h3>
+      <InputField 
+      // handleChangeInput={props.handleChangeInput}
+      handleSubmit={props.handleSubmit}
+      inputvalue={props.inputvalue}/>
       <List items={props.items} handleClick={props.handleClick}/>
     </div>
   );
