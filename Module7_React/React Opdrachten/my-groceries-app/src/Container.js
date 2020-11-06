@@ -6,12 +6,8 @@ class Container extends Component {
   constructor() {
     super();
     this.state = {
-      groceryItems: [
-        // { id: 1, title: "paprikachips"}, { id: 2, title: "bier"}
-      ],
-      shoppingListItems: [
-        // { id: 1, title: "paprikachips", count: 1 }
-      ],
+      groceryItems: [],
+      shoppingListItems: [],
     };
     this.handleClickGroceryItem = this.handleClickGroceryItem.bind(this);
     this.emptyCart = this.emptyCart.bind(this);

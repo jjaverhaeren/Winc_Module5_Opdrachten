@@ -1,11 +1,5 @@
-.App {
-  
-  /* border: 2px solid red; */
-}
-
 .app_container {
   margin: 0 auto;
-  /* border: 2px solid red; */
   width: 350px;
 }
 
@@ -66,15 +60,11 @@ h3 {
 
 .shoppingCart .container:nth-child(odd) {
   background-color: rgb(202, 208, 224);
-  /* color: aliceblue;  */
 }
 
 .shoppingCart .container:nth-child(even) {
   background-color:rgb(182, 193, 224);
-  /* color: aliceblue;  */
 }
-
-
 
 .shoppingCart {
   border: 1px solid rgb(12, 70, 228);
@@ -104,6 +94,5 @@ h3 {
 
 .empty:hover {
   background-color: rgb(12, 29, 78);
-  /* font-weight: bold; */
 }
 
