@@ -7,7 +7,7 @@ function GroceryList(props) {
     <div className="groceryList">
       <h3>Grocery List</h3>
       <InputField handleSubmit={props.handleSubmit} />
-      <List items={props.items} handleClick={props.handleClick} />
+      <List items={props.items} handleClick={props.handleClick} handleBin={props.handleBin}/>
     </div>
   );
 }

@@ -8,6 +8,9 @@ function List(props) {
         {item.count}x
       </section>
       <ListItem key={item.id} item={item} handleClick={props.handleClick} />
+      <button className="trashbin"  onClick={props.handleBin}>x</button>
+      <button onClick={props.handleClickPlus}>+</button>
+      <button onClick={props.handleClickMinus}>-</button>
     </div>
   ));
   return <div className="list">{itemsArray}</div>;

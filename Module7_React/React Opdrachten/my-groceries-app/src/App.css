@@ -43,8 +43,15 @@ h3 {
   color: rgb(12, 12, 56);
 }
 
+.groceryList .container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
 .groceryList .list-item {
-  display: inline-block;
+  display: inline;
+ 
   font-weight: bold;
   font-size: 1.1rem;
   letter-spacing: 0.2rem;
@@ -52,6 +59,50 @@ h3 {
 
 .groceryList .count {
   display: none;
+}
+
+.groceryList button {
+  display: none;
+  width: 40px;
+  height: 20px;
+  margin: 1px;
+ 
+  align-self: center;
+}
+
+.groceryList .trashbin {
+  display: inline;
+  width: auto;
+  height: 20px;
+  background-color: white;
+  border: 1px solid rgb(194, 193, 193);
+  border-radius: 7px;
+  color: rgb(194, 193, 193);
+  margin: 1px;
+}
+
+.groceryList .trashbin:hover {
+  border: 1px solid gray;
+  color: gray;
+}
+
+.shoppingCart .trashbin {
+  display: none;
+}
+
+.shoppingCart button {
+  width: 30px;
+  height: 20px;
+  border: 1px solid rgb(47, 56, 138);
+  border-radius: 2px;
+  background-color: rgb(159, 175, 221);
+  color: rgb(25, 31, 78);
+  margin: 1px;
+  align-self: center;
+}
+
+.groceryList .add-button {
+  display: inline;
 }
 
 .shoppingCart .count {
@@ -81,7 +132,7 @@ h3 {
   flex-direction: row;
 }
 
-.empty {
+.shoppingCart .empty {
   display: inline;
   height: 30px;
   min-width: 250px;
@@ -92,7 +143,7 @@ h3 {
   margin: 10px 0px 0px 0px;
 }
 
-.empty:hover {
+.shoppingCart  .empty:hover {
   background-color: rgb(12, 29, 78);
 }
 
