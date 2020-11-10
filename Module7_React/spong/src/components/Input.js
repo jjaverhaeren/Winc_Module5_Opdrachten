@@ -4,13 +4,13 @@ import Sort from "./Sort";
 function Input(props) {
   return (
     <div className="input_container">
-      <form className="form" onSubmit={props.handleSubmit}>
+      <form autoComplete="off" className="form" onSubmit={props.handleSubmit}>
         <input
           className="input_song"
           type="text"
           name="song"
-          value={props.name}
-          placeholder="song title"
+          value={props.song}
+          placeholder="Song title"
           onChange={props.handleChange}
         ></input>
         <input
@@ -18,7 +18,7 @@ function Input(props) {
           type="text"
           name="artist"
           value={props.artist}
-          placeholder="artist"
+          placeholder="Artist"
           onChange={props.handleChange}
         ></input>
         <select
@@ -40,6 +40,7 @@ function Input(props) {
           onChange={props.handleChange}
           name="rating"
         >
+          <option value="0">rating</option>
           <option value="1">1</option>
           <option value="2">2</option>
           <option value="3">3</option>

@@ -1,10 +1,24 @@
-Container {
-  border: 3px solid red;
+.Container {
+  margin: 50px auto;
+  background-color: rgb(75, 13, 16);
+  width: 630px;
+  color: rgb(255, 224, 87);
 }
 
 .list {
-  border: 3px solid red;
   width: 600px;
+  padding: 10px;
+}
+
+.header {
+  width: 550px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  color: white;
+  font-weight: bold;
+  margin-bottom: 10px;
 }
 
 .list_id {
@@ -13,60 +27,85 @@ Container {
 
 .input_container {
   width: 600px;
-  border: 3px solid purple;
+  /* border: 3px solid purple; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 10px;
 }
 
 .form {
-    border: 3px solid green;
-  width: auto; 
+  /* border: 3px solid green; */
+  width: auto;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  margin: 0;
 }
 
 .list-item {
-    border: 2px solid blue;
-    display: flex;
-    flex-direction: row;
-    justify-content: space-between;
-    align-items: center;
+  /* border: 2px solid blue; */
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  margin: 5px 0px;
+}
+.input_song,
+.input_artist,
+.input_genre,
+.input_rating,
+.sort {
+  background-color: rgb(253, 216, 170);
 }
 
-.list_song, .input_name{
-  border: 2px solid pink;
-    width: 175px;
-    margin: 2px 5px;
+.list_song,
+.input_name,
+.header_title {
+  /* border: 2px solid pink; */
+  width: 175px;
+  margin: 2px 5px;
 }
 
-.list_artist, .input_artist {
-  border: 2px solid pink;
-    width: 150px;
-    margin: 2px 5px;
+.list_artist,
+.input_artist,
+.header_artist {
+  /* border: 2px solid darkgoldenrod; */
+  width: 150px;
+  margin: 2px 5px;
 }
 
-.list_genre, .input_genre {
-  border: 2px solid pink;
-    width: 70px;
-    margin: 2px 5x;
+.list_genre,
+.input_genre,
+.header_genre {
+  /* border: 2px solid pink; */
+  width: 70px;
+  margin: 2px 5x;
 }
 
-.list_rating, .input_rating {
-  border: 2px solid pink;
-    width: 50px;
-    margin: 2px 5px;
+.list_rating,
+.input_rating,
+.header_rating {
+  /* border: 2px solid pink; */
+  width: 70px;
+  margin: 2px 5px;
 }
 
 .input_sort {
   width: 100px;
-  border: 2px solid yellow;
+  /* border: 2px solid yellow; */
+  margin: 0;
 }
 
 .add-button {
-  background-color: red;
+  background-color: rgb(205,31, 20);
   color: white;
+}
+
+.trashbin {
+  /* border: 2px solid blue; */
+  height: 20px;
+  width: auto;
 }

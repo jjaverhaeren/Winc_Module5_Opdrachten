@@ -9,7 +9,7 @@ function Sort(props) {
         onChange={props.handleSort}
         name="sort"
       >
-        <option value="default">--sort by--</option>
+        <option value="default">Sort by</option>
         <option value="song">Song Title</option>
         <option value="artist">Artist</option>
         <option value="genre">Genre</option>

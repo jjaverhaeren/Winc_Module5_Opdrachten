@@ -1,4 +1,5 @@
 import React from "react"
+import trashbin from "../img/trashbin.png"
 
 function ListItem(props) {
 
@@ -13,7 +14,7 @@ function ListItem(props) {
       <section className="list_artist" key={props.item.id + 2} >{props.item.artist}</section> 
       <section className="list_genre" key={props.item.id + 3}>{props.item.genre}</section>
       <section className="list_rating" key={props.item.id + 4}>{props.item.rating}</section>
-      <button onClick={props.deleteSong} className="list_rating" key={props.item.id + 5}>x</button>
+      <img key={props.item.id + 5} src={trashbin} alt="trashbin" className="trashbin" onClick={props.deleteSong} key={props.item.id + 5} />
     </li>
     )
 }

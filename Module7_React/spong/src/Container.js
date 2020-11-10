@@ -46,18 +46,28 @@ class Container extends Component {
       song: "",
       artist: "",
       genre: "",
-      rating: 5,
+      rating: 0,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.handleSort = this.handleSort.bind(this);
     this.deleteSong = this.deleteSong.bind(this);
+    this.clearInputFields = this.clearInputFields.bind(this);
   }
 
   handleChange(event) {
     const { name, value } = event.target;
     this.setState({
       [name]: value,
+    });
+  }
+
+  clearInputFields() {
+    this.setState({
+      song: "",
+      artist: "",
+      genre: "",
+      rating: 0,
     });
   }
 
@@ -76,8 +86,8 @@ class Container extends Component {
       rating: newRating,
     };
     this.state.playlist.push(newItem);
-    this.setState({ playlist: this.state.playlist, genre: "genre", rating: 5 });
-    event.target.childNodes[0].value = "";
+    this.setState({ playlist: this.state.playlist, genre: "genre", rating: 0 });
+    this.clearInputFields();
   }
 
   handleSort(event) {
@@ -125,24 +135,21 @@ class Container extends Component {
 
   deleteSong(event) {
     event.preventDefault();
-    // console.log(event.target.parentElement.childNodes[0].innerHTML);
-    const toDelete = event.target.parentElement.childNodes[0].innerHTML;
+    const toDelete = parseInt(
+      event.target.parentElement.childNodes[0].innerHTML
+    );
     this.state.playlist.forEach(item => {
-      // console.log(item.id);
-      // console.log(toDelete);
       if (toDelete === item.id) {
         let index = this.state.playlist.indexOf(item);
         this.state.playlist.splice(index, 1);
         this.setState({ playlist: this.state.playlist });
-      } else {
-        console.log('no item deleted')
       }
     });
   }
 
   render() {
     return (
-      <div>
+      <div className="Container">
         <Input
           song={this.state.song}
           artist={this.state.artist}
