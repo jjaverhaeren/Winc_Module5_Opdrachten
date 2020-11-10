@@ -1,0 +1,72 @@
+Container {
+  border: 3px solid red;
+}
+
+.list {
+  border: 3px solid red;
+  width: 600px;
+}
+
+.list_id {
+  display: none;
+}
+
+.input_container {
+  width: 600px;
+  border: 3px solid purple;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.form {
+    border: 3px solid green;
+  width: auto; 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.list-item {
+    border: 2px solid blue;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.list_song, .input_name{
+  border: 2px solid pink;
+    width: 175px;
+    margin: 2px 5px;
+}
+
+.list_artist, .input_artist {
+  border: 2px solid pink;
+    width: 150px;
+    margin: 2px 5px;
+}
+
+.list_genre, .input_genre {
+  border: 2px solid pink;
+    width: 70px;
+    margin: 2px 5x;
+}
+
+.list_rating, .input_rating {
+  border: 2px solid pink;
+    width: 50px;
+    margin: 2px 5px;
+}
+
+.input_sort {
+  width: 100px;
+  border: 2px solid yellow;
+}
+
+.add-button {
+  background-color: red;
+  color: white;
+}
