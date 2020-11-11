@@ -26,8 +26,6 @@
 }
 
 .input_container {
-  width: 600px;
-  /* border: 3px solid purple; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -36,7 +34,6 @@
 }
 
 .form {
-  /* border: 3px solid green; */
   width: auto;
   display: flex;
   flex-direction: row;
@@ -46,7 +43,6 @@
 }
 
 .list-item {
-  /* border: 2px solid blue; */
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -64,7 +60,6 @@
 .list_song,
 .input_name,
 .header_title {
-  /* border: 2px solid pink; */
   width: 175px;
   margin: 2px 5px;
 }
@@ -72,7 +67,6 @@
 .list_artist,
 .input_artist,
 .header_artist {
-  /* border: 2px solid darkgoldenrod; */
   width: 150px;
   margin: 2px 5px;
 }
@@ -80,7 +74,6 @@
 .list_genre,
 .input_genre,
 .header_genre {
-  /* border: 2px solid pink; */
   width: 70px;
   margin: 2px 5x;
 }
@@ -88,14 +81,12 @@
 .list_rating,
 .input_rating,
 .header_rating {
-  /* border: 2px solid pink; */
   width: 70px;
   margin: 2px 5px;
 }
 
 .input_sort {
   width: 100px;
-  /* border: 2px solid yellow; */
   margin: 0;
 }
 
@@ -105,7 +96,6 @@
 }
 
 .trashbin {
-  /* border: 2px solid blue; */
   height: 20px;
   width: auto;
 }

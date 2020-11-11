@@ -1,6 +1,7 @@
 import React, { Component } from "react";
 import Input from "./components/Input";
 import List from "./components/List";
+import Nav from "./components/Nav";
 
 class Container extends Component {
   constructor() {
@@ -149,17 +150,20 @@ class Container extends Component {
 
   render() {
     return (
-      <div className="Container">
-        <Input
-          song={this.state.song}
-          artist={this.state.artist}
-          genre={this.state.genre}
-          rating={this.state.rating}
-          handleChange={this.handleChange}
-          handleSubmit={this.handleSubmit}
-          handleSort={this.handleSort}
-        />
-        <List playlist={this.state.playlist} deleteSong={this.deleteSong} />
+      <div>
+        <div className="Container">
+          <Input
+            song={this.state.song}
+            artist={this.state.artist}
+            genre={this.state.genre}
+            rating={this.state.rating}
+            handleChange={this.handleChange}
+            handleSubmit={this.handleSubmit}
+            handleSort={this.handleSort}
+          />
+          <List playlist={this.state.playlist} deleteSong={this.deleteSong} />
+        </div>
+        <Nav />
       </div>
     );
   }
