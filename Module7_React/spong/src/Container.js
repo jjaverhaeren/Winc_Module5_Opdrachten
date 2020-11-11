@@ -7,43 +7,7 @@ class Container extends Component {
   constructor() {
     super();
     this.state = {
-      playlist: [
-        {
-          id: 1,
-          title: "For Whom The Bell Tolls",
-          artist: "Metallica",
-          genre: "rock",
-          rating: 4,
-        },
-        {
-          id: 2,
-          title: "Blessed are the Sick",
-          artist: "Morbid Angel",
-          genre: "pop",
-          rating: 3,
-        },
-        {
-          id: 3,
-          title: "Outshined",
-          artist: "Soundgarden",
-          genre: "country",
-          rating: 4,
-        },
-        {
-          id: 4,
-          title: "For the love of God",
-          artist: "Steve Vai",
-          genre: "classical",
-          rating: 5,
-        },
-        {
-          id: 5,
-          title: "Hangar 18",
-          artist: "Megadeth",
-          genre: "folk",
-          rating: 2,
-        },
-      ],
+      playlist: [],
       song: "",
       artist: "",
       genre: "",
