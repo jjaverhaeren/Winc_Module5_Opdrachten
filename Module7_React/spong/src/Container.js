@@ -114,20 +114,17 @@ class Container extends Component {
 
   render() {
     return (
-      <div>
-        <div className="Container">
-          <Input
-            song={this.state.song}
-            artist={this.state.artist}
-            genre={this.state.genre}
-            rating={this.state.rating}
-            handleChange={this.handleChange}
-            handleSubmit={this.handleSubmit}
-            handleSort={this.handleSort}
-          />
-          <List playlist={this.state.playlist} deleteSong={this.deleteSong} />
-        </div>
-        <Nav />
+      <div className="Container">
+        <Input
+          song={this.state.song}
+          artist={this.state.artist}
+          genre={this.state.genre}
+          rating={this.state.rating}
+          handleChange={this.handleChange}
+          handleSubmit={this.handleSubmit}
+          handleSort={this.handleSort}
+        />
+        <List playlist={this.state.playlist} deleteSong={this.deleteSong} />
       </div>
     );
   }

@@ -12,6 +12,7 @@ function Input(props) {
           value={props.song}
           placeholder="Song title"
           onChange={props.handleChange}
+          required
         ></input>
         <input
           className="input_artist"
@@ -20,6 +21,7 @@ function Input(props) {
           value={props.artist}
           placeholder="Artist"
           onChange={props.handleChange}
+          required
         ></input>
         <select
           className="input_genre"
