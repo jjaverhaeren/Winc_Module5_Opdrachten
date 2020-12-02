@@ -1,0 +1,132 @@
+Front-end Development
+1 COMPLETED COURSE
+EINDOPDRACHT INLEVEREN: REACT LIL' PLAYLIST
+MORE
+Inleveren
+
+Stap 1: Maak een nieuwe repository voor jouw eindopdracht met de naamgeving als volgt:
+
+    <voornaam_achternaam> - <naam van eindopdracht>
+
+Bijvoorbeeld: luc_meijer - KleurenToggle
+
+Stap 2: Kopieer de link van deze repository
+
+Stap 3: Plak de link hieronder in het "text-reply" vak.
+
+Let op: post enkel de link naar Github. Voor andere vragen & opmerkingen kun je terecht in Slack of de FAQ.
+
+Stap 4: Belangrijk! => Mocht een bepaalde requirement niet zijn gelukt; geef dan aan welke requirement dit was en waarom het niet gelukt is deze werkende te krijgen.
+
+Hoe "Push" ik ook alweer een bestand naar Github vanuit de Terminal/Command Line?
+
+git add . => voeg alle bestanden toe
+git commit -m "COMMIT BOODSCHAP"
+git push
+
+Even helemaal vergeten hoe het ook alweer moest? Lees het terug in deze unit!
+
+Ingeleverd, en nu? na het inleveren van je website staat er "pending reply from instructor" en kan je niet meer verder. Dit was de eindopdracht.Nu is het dus eventjes wachten op het oordeel van een Winc docent die jouw project nakijkt en feedback zal geven wat goed ging en waar je eventueel zou kunnen verbeteren.
+
+Ohjee, ik heb een verkeerde link gëupload: Heb je een foutje gemaakt, geen probleem! Je kunt de opdracht nog wijzigen of zelfs een hele nieuwe URL doorsturen via onderstaande (blauwe) knop.
+
+Completed. Let's continue.
+
+Instructor reply
+
+Your answer
+×
+Instructor reply
+Grade: 10
+Comments:
+Beste Jorgen,
+
+Je hebt de eindopdracht goed gedaan.
+
+Ik zie dat je veel tijd hebt gestopt in de styling van je app en dat heb je heel mooi gedaan.
+
+Ik moest om het project te kunnen starten nog wel react-router-dom installeren met npm. Dit is een kleine moeite maar hoort niet. Als je een eindopdracht inlevert moet hij compleet zijn.
+
+Probeer ook om je een eindopdracht nog even een keer na te kijken op stukken code die je niet gebruikt. Dat kun je dan ook weglaten.
+
+Daarnaast zie ik ook geen .gitignore file.
+
+Requirements
+
+[x] Als gebruiker wil ik de volgende gegevens over mijn nummer kunnen invullen: titel, artiest, genre, rating (dropdown menu is geen vereiste).
+
+[x] Als gebruiker wil ik op één button kunnen klikken waardoor mijn ingevulde nummer toegevoegd wordt aan mijn playlist.
+
+[x] Als gebruiker wil ik mijn nummers kunnen zien in een overzicht (mijn playlist), waar alle ingevulde gegevens in zichtbaar zijn.
+
+Bonus requirements
+
+[x] 1 PUNT – Sorteren van de liedjes op naam (a-z of z-a) of artiest (a-z of z-a), sorteren op sterren (5-1 of 1-5)
+
+[x] 1 PUNT – Delete knop: verwijderen van liedjes uit de state
+
+[x] 1 PUNT – Categoriseren: elke genre krijgt zijn eigen lijstje en het nummer dat je toevoegt komt terecht bij het respectievelijke genre
+
+[x] 2 PUNTEN – Filteren van liedjes op
+
+genre (selecteren welke genres je wilt) in de UI zie je of een dropdown waarmee je 1 genre kan selecteren, of je maakt een checkbox per genre, als die checkbox is aangevinkt: toon het genre (dit kunnen er dus ook meerdere of geen één zijn)
+
+sterren (sorteren welke resultaten met x sterren je wilt zien) in de UI zie je of een dropdown waarmee je 1 rating kan selecteren, of je maakt een checkbox per rating, als die checkbox is aangevinkt: toon alle liedje van die rating (dit kunnen er dus ook meerdere of geen één zijn)
+
+[x] 2 PUNTEN – Routing (/Navigatie): toevoegen van een navbar of menu met een link en pagina "About us", met daarin een kort verhaaltje over jezelf en dit project (max 10 zinnen)
+
+[ ] 2 PUNTEN – REDUX
+
+Sterke punten
+
+Je hebt aan de minimale requirements voldaan
+
+Je hebt aan bijna alle bonus requirements voldaan!
+
+Je hebt een goede file structuur
+
+Je code ziet er netjes uit
+
+Je gebruikt goede namen voor je variabelen en functies
+
+Je functies zijn lekker kort
+
+Je hebt DRY geprogrammeerd
+
+De styling van je applicatie is goed
+
+Verbeterpunten
+
+Je hebt geen gebruik gemaakt van function expressions
+
+Maak meer gebruik van moderne JavaScript syntax
+
+Je past de state aan op een manier die niet helemaal netjes is.
+
+Voorbeeld:
+
+In je container.js line 53 doe je dit:
+
+this.state.playlist.push(newItem);
+
+this.setState({ playlist: this.state.playlist, genre: "genre", rating: 0 });
+
+Je manipuleert direct de state terwijl je wilt dat de state immutable is.
+
+Dit zou een andere manier van je playlist updaten kunnen zijn:
+
+this.setState(prevState => ({
+
+playlist: [...prevState.playlist, newItem],
+
+genre: "genre",
+
+rating: 0,
+
+}));
+
+Met vriendelijke groet,
+
+Namens het Winc docenten-team,
+
+Ben Linnenbank docent(-assistent)

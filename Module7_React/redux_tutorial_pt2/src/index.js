@@ -1,0 +1,15 @@
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import { createStore, combineReducers } from "redux";
+import allReducers from "./reducers";
+
+const store = createStore(allReducers);
+
+ReactDOM.render(
+  <React.StrictMode>
+    <App />
+  </React.StrictMode>,
+  document.getElementById("root")
+);
