@@ -1,33 +1,30 @@
-import React, { useState, useContext } from "react";
-import { Bar, Doughnut } from "react-chartjs-2";
+import React, { useState } from "react";
+import { Bar, Line, Doughnut } from "react-chartjs-2";
+import students from "../data/utils";
 
-import Context from "../Context";
-
-function Chart() {
-  //   const distinctNames = [...new Set(students.map(rating => rating.Student))];
-  const xAxisLabels = useContext(Context);
+function Chart({ xAxisLabels, dataSet1Data, dataSet2Data }) {
+    
 
   const [data, setData] = useState({
     labels: xAxisLabels,
     datasets: [
       {
         label: "Moeilijk",
-        data: [2, 2, 3, 2, 4, 3, 5, 4, 3, 5, 1],
-        backgroundColor: "lightgreen",
+        data: dataSet1Data,
+        backgroundColor: "rgba(255, 0, 0, 0.863)",
 
         borderWidth: 1,
-        hoverBorderWidth: 3,
-        hoverBorderColor: "gray",
+        hoverBorderWidth: 1,
+        hoverBorderColor: "rgba(209, 1, 1, 0.863)",
         scaleLabel: "Hatsieflatsie",
       },
       {
         label: "Leuk",
-        data: [5, 3, 4, 2, 5, 4, 2, 5, 4, 3, 2],
-        backgroundColor: "red",
-
+        data: dataSet2Data,
+        backgroundColor: "rgb(1, 91, 209)",
         borderWidth: 1,
-        hoverBorderWidth: 3,
-        hoverBorderColor: "gray",
+        hoverBorderWidth: 1,
+        hoverBorderColor: "rgb(1, 72, 163)",
       },
     ],
   });
@@ -46,7 +43,7 @@ function Chart() {
 
   return (
     <div className="chart">
-      <Bar className="nut" data={data} options={options}/>
+      <Bar className="nut" data={data} options={options} />
     </div>
   );
 }

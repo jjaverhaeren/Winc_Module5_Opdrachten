@@ -1,16 +1,11 @@
 import "./App.css";
-import Home from "./components/Home";
-import Chart from "./components/Chart";
-import { Provider } from "./Context";
+import Container from "./components/Container";
 
 function App() {
   return (
-    <Provider>
-      <div className="App">
-        <Home />
-        <Chart />
-      </div>
-    </Provider>
+    <div className="App">
+      <Container />
+    </div>
   );
 }
 
