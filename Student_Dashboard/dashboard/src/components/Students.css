@@ -1,0 +1,42 @@
+
+.studentsList {
+  list-style: none;
+}
+
+
+.list_container {
+  border: 2px solid green;
+  width: 200px;
+}
+
+.student_feature-container {
+  border: 2px solid red;
+  position: relative;
+  width: 300px;
+}
+
+.student_info-container {
+  text-align: left;
+  padding-left: 30px;
+}
+
+.student_donut-container {
+  /* border: 2px solid blue; */
+  background-color: transparent;
+  position: relative;
+  width: 150px;
+  height: auto;
+  border-radius: 50%;
+  margin: 0 auto;
+  padding: 0px;
+  z-index: 2;
+}
+
+img {
+  width: 100px;
+  border-radius: 50%;
+  position: absolute;
+  bottom: 25px;
+  right: 100px;
+  z-index: 1;
+}

@@ -1041,6 +1041,17 @@ const ratings = [
   },
 ];
 
+const students = [...ratings];
+// console.log(students);
+
+const distinctOpdrachtNames = [
+  ...new Set(ratings.map(rating => rating.Opdracht)),
+];
+
+const distinctStudentNames = [
+  ...new Set(ratings.map(rating => rating.Student)),
+];
+
 const randomPhone = () => {
   const lasteight = Math.round(Math.random() * (99999999 - 10000000));
   return "06-" + lasteight;
@@ -1050,24 +1061,20 @@ const randomAge = () => {
   return Math.round(Math.random() * (55 - 18) + 18);
 };
 
-ratings.forEach(rating => {
-  rating.email = `${rating.Student}@gmail.com`;
-  rating.phone = randomPhone();
-  rating.age = randomAge();
+const info = distinctStudentNames.map(name => ({ name }));
+
+let id = 1;
+info.forEach(student => {
+  student.id = id++;
+  student.phone = randomPhone();
+  student.email = `${student.name}@gmail.com`;
+  student.age = randomAge();
 });
-// console.log(ratings);
 
-const students = [...ratings];
-// console.log(students);
-
-const distinctStudentNames = [
-  ...new Set(ratings.map(rating => rating.Student)),
-];
-const distinctOpdrachtNames = [
-  ...new Set(ratings.map(rating => rating.Opdracht)),
-];
+// console.log(info)
 // console.log(distincStudenttNames);
 // console.log(distinctOpdrachtNames);
+// console.log(distinctStudents);
 
 // let sumMoeilijk = 0,
 //   sumLeuk = 0;
@@ -1111,32 +1118,43 @@ const distinctOpdrachtNames = [
 //   }
 // };
 
-// const getAveragesPerStudent = (studentName) => {
-//     let sumMoeilijk = 0,
-//       sumLeuk = 0,
-//       numberOfTests = 0;
-//     ratings.forEach(rating => {
-//       if (rating.Student === studentName) {
-//         sumMoeilijk += rating.Moeilijk;
-//         sumLeuk += rating.Leuk;
-//         numberOfTests++;
-//       }
-//     });
-//     console.log(
-//       `${studentName} gemiddelde Moeilijk: ${Math.round(
-//         sumMoeilijk / numberOfTests
-//       )}`
-//     );
-//     console.log(
-//       `${studentName} gemiddelde Leuk: ${Math.round(
-//         sumLeuk / numberOfTests
-//       )}`
-//     );
-//     const averageMoeilijk = Math.round(sumMoeilijk / numberOfTests);
-//     const averageLeuk = Math.round(sumLeuk / numberOfTests);
-//     return [studentName, averageMoeilijk, averageLeuk];
+const getAveragesPerStudent = (studentName) => {
+    let sumMoeilijk = 0,
+      sumLeuk = 0,
+      numberOfTests = 0;
+    ratings.forEach(rating => {
+      if (rating.Student === studentName) {
+        sumMoeilijk += rating.Moeilijk;
+        sumLeuk += rating.Leuk;
+        numberOfTests++;
+      }
+    });
+    console.log(
+      `${studentName} gemiddelde Moeilijk: ${Math.round(
+        sumMoeilijk / numberOfTests
+      )}`
+    );
+    console.log(
+      `${studentName} gemiddelde Leuk: ${Math.round(
+        sumLeuk / numberOfTests
+      )}`
+    );
+    const averageMoeilijk = Math.round(sumMoeilijk / numberOfTests);
+    const averageLeuk = Math.round(sumLeuk / numberOfTests);
+    let dataSet = [];
+    dataSet.push(averageMoeilijk);
+    dataSet.push(averageLeuk)
+  return dataSet;
+};
 
-// };
+const loepie = getAveragesPerStudent("Martina")
+// console.log(soepie)
+console.log(loepie)
+
+// distinctStudentNames.forEach(name => {
+//   getAveragesPerStudent(name);
+// })
+
 
 // distincStudenttNames.forEach(name => {
 //   getAveragesPerStudent(name)
@@ -1229,11 +1247,11 @@ const getDataSet = () => {
   });
   // console.log("total1Data: " + total1Data);
   // console.log("total2Data: " + total2Data);
-  return [ total1Data, total2Data ]
+  return [total1Data, total2Data];
 };
 
 const [total1Data] = getDataSet();
-console.log(total1Data)
+// console.log(total1Data)
 
 // distinctOpdrachtNames.forEach(name => {
 //   getDataSet(name)

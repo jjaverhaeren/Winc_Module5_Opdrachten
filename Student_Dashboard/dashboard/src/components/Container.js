@@ -1,29 +1,55 @@
 import React, { useState } from "react";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import Home from "./Home";
+import Students from "./Students";
+import Nav from "./Nav";
 import {
   students,
-  getAverage,
-  getAveragesPerOpdracht,
   getDataSet,
   distinctOpdrachtNames,
-  distinctStudentNames,
+  studentInfo,
+  getAveragesPerStudent,
 } from "../data/utils";
-import Home from "./Home";
-import Chart from "./Chart";
 
-const Container = () => {
+const Container = props => {
   const [xAxisLabels, setXAxisLabels] = useState(distinctOpdrachtNames);
-
-  const [dataSet1Data,dataSet2Data] = getDataSet();
-
+  const [dataSet1Data, dataSet2Data] = getDataSet();
+  const [studentName ,dataSet]= getAveragesPerStudent("Rahima");
+  
 
   return (
     <div>
-      <Home />
-      <Chart
-        xAxisLabels={xAxisLabels}
-        dataSet1Data={dataSet1Data}
-        dataSet2Data={dataSet2Data}
-      />
+      <Router>
+        <div>
+          <Nav />
+          <Switch>
+            <Route
+              path="/"
+              exact
+              render={props => (
+                <Home
+                  xAxisLabels={xAxisLabels}
+                  dataSet1Data={dataSet1Data}
+                  dataSet2Data={dataSet2Data}
+                />
+              )}
+            />
+            <Route
+              path="/students"
+              render={props => (
+                <Students
+                  studentInfo={studentInfo}
+                  studentName={studentName}
+                  dataSet={dataSet}
+                  xAxisLabels={xAxisLabels}
+                  dataSet1Data={dataSet1Data}
+                  dataSet2Data={dataSet2Data}
+                />
+              )}
+            />
+          </Switch>
+        </div>
+      </Router>
     </div>
   );
 };
