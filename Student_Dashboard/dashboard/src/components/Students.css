@@ -1,16 +1,33 @@
-
-.studentsList {
-  list-style: none;
+.main {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
 }
 
+.left_container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(4, 121, 255);
+  color: white;
+}
+
+.bar_container {
+  /* border: 1px solid purple; */
+  width: 1000px;
+  padding-top: 100px;
+}
 
 .list_container {
-  border: 2px solid green;
+  /* border: 2px solid green; */
+  margin-top: 50px;
+  margin-bottom: 50px;
   width: 200px;
+  align-self: center;
 }
 
 .student_feature-container {
-  border: 2px solid red;
+  /* border: 2px solid red; */
   position: relative;
   width: 300px;
 }

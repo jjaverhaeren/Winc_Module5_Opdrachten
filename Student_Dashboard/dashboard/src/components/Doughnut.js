@@ -7,7 +7,7 @@ const Chart = props => {
     datasets: [
       {
         data: props.dataSet,
-        backgroundColor: ["rgba(249, 97, 94, 0.8)", "rgb(74, 92, 95)"],
+        backgroundColor: ["rgba(238, 3, 23,  0.8)", "rgb(255, 208, 0)"],
         borderWidth: 1,
         hoverBorderWidth: 1,
         hoverBorderColor: "rgba(209, 1, 1, 0.863)",

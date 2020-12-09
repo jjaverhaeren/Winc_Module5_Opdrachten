@@ -1,0 +1,21 @@
+.main {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: row;
+  height: 600px;
+}
+
+.left_container {
+  /* border: 1px solid red; */
+  display: flex;
+  flex-direction: column;
+  background-color: rgb(4, 121, 255);
+  color: white;
+  width: 300px;
+}
+
+.chart_container {
+  /* border: 1px solid red; */
+  width: 1000px;
+  padding-top: 100px;
+}
