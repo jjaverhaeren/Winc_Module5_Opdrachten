@@ -5,6 +5,7 @@
   height: 600px;
 }
 
+
 .left_container {
   /* border: 1px solid red; */
   display: flex;
@@ -18,4 +19,38 @@
   /* border: 1px solid red; */
   width: 1000px;
   padding-top: 100px;
+}
+
+.home_donut-container {
+  background-color: transparent;
+  position: relative;
+  width: auto;
+  height: 150px;
+  /* border-radius: 50%; */
+  margin: 0 auto;
+  padding: 0px;
+  z-index: 2;
+}
+
+.feature_container img {
+  /* border: 2px solid red; */
+  position: absolute;
+  left: 100px;
+  bottom: 253px;
+  z-index: 1;
+  width: 100px;
+}
+
+.buttons-container {
+  /* border: 2px solid green; */
+  height: 200px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.buttons-container button {
+  margin: 10px;
+  width: 200px;
 }

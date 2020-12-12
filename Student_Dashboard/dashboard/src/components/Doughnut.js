@@ -3,7 +3,10 @@ import { Doughnut } from "react-chartjs-2";
 
 const Chart = props => {
   const [data, setData] = useState({
-    labels: ["Moeilijk", "Leuk"],
+    labels: [
+      "Gemiddeld Moeilijk Alle opdrachten",
+      "Gemiddeld Leuk Alle Opdrachten",
+    ],
     datasets: [
       {
         data: props.dataSet,

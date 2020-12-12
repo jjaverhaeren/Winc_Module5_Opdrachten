@@ -1,6 +1,6 @@
 import React from "react";
 import "./Students.css";
-import Select from "./Select"
+import Select from "./Select";
 import person3 from "../img/person3.jpg";
 import person8 from "../img/person8.jpg";
 import Doughnut from "./Doughnut";
@@ -20,12 +20,11 @@ const Students = props => {
   return (
     <div className="main">
       <div className="left_container">
+        <h3>Students</h3>
         <div className="list_container">
-          select Student:
           <form>
-            <Select studentInfo={props.studentInfo}/>
+            <Select studentInfo={props.studentInfo} />
           </form>
-          {/* <List className="list" studentInfo={props.studentInfo} /> */}
         </div>
         <div className="student_feature-container">
           <div className="student_info-container">
@@ -42,6 +41,24 @@ const Students = props => {
       </div>
 
       <div className="bar_container">
+        <label>
+          <input
+            type="checkbox"
+            name="moeilijk"
+            onChange={props.moeilijkCheckedOnChange}
+            checked={props.moeilijkChecked}
+          />
+          Moeilijk
+        </label>
+        <label>
+          <input
+            type="checkbox"
+            name="leuk"
+            onChange={props.leukCheckedOnChange}
+            checked={props.leukChecked}
+          />
+          Leuk
+        </label>
         <Bar
           xAxisLabels={props.xAxisLabels}
           dataSet1Data={props.dataSet1Data}
