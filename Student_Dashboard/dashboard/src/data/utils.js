@@ -1070,6 +1070,43 @@ info.forEach(student => {
   student.age = randomAge();
 });
 
+info.forEach(student => {
+  switch (student.name) {
+    case "Evelyn":
+      student.studentImgUrl = "/img/Evelyn.jpg";
+      break;
+    case "Aranka":
+      student.studentImgUrl = "/img/Aranka.jpg";
+      break;
+    case "Floris":
+      student.studentImgUrl = "/img/Floris.jpg";
+      break;
+    case "Hector":
+      student.studentImgUrl = "/img/Hector.jpg";
+      break;
+    case "Martina":
+      student.studentImgUrl = "/img/Martina.jpg";
+      break;
+    case "Maurits":
+      student.studentImgUrl = "/img/Maurits.jpg";
+      break;
+    case "Rahima":
+      student.studentImgUrl = "/img/Rahima.jpg";
+      break;
+    case "Sandra":
+      student.studentImgUrl = "/img/Sandra.jpg";
+      break;
+    case "Storm":
+      student.studentImgUrl = "/img/Storm.jpg";
+      break;
+    case "Wietske":
+      student.studentImgUrl = "/img/Wietske.jpg";
+      break;
+    default:
+      student.studentImgUrl = "/img/winclogo.jpg";
+  }
+});
+
 export const studentInfo = info;
 //
 
@@ -1143,3 +1180,61 @@ export const getAveragesPerStudent = studentName => {
   dataSet.push(averageLeuk);
   return [studentName, dataSet];
 };
+
+export const getAveragesPerStudentPerOpdracht = (studentName, opdracht) => {
+  let sumMoeilijk = 0,
+    sumLeuk = 0,
+    numberOfTests = 0;
+  students.forEach(student => {
+    if (student.Student === studentName && student.Opdracht === opdracht) {
+      sumMoeilijk += student.Moeilijk;
+      sumLeuk += student.Leuk;
+      numberOfTests++;
+    }
+  });
+
+  const averageMoeilijk = Math.round(sumMoeilijk / numberOfTests);
+  const averageLeuk = Math.round(sumLeuk / numberOfTests);
+  console.log(`${studentName} gemiddelde Moeilijk: ${averageMoeilijk}`);
+  console.log(`${studentName} gemiddelde Leuk: ${averageLeuk}`);
+  let dataSet = [];
+  dataSet.push(averageMoeilijk);
+  dataSet.push(averageLeuk);
+  return dataSet;
+};
+
+export const getAveragesPerStudentAllOpdrachten = (studentSet, studentName) => {
+  let moeilijkArray = [], leukArray = [];
+  studentSet.forEach(student => {
+    if (student.Student === studentName) {
+     moeilijkArray.push(student.Moeilijk);
+     leukArray.push(student.Leuk)
+    }
+  });
+  return [moeilijkArray, leukArray]
+}
+
+const getStudentSet = (studentName) => {
+  let studentSet = [];
+  students.forEach(student => {
+    if(student.Student === studentName) {
+      studentSet.push(student)
+    }
+  })
+  // console.log(studentSet);
+  return studentSet;
+}
+
+export const sortByMoeilijk = (studentName) => {
+  let studentSet = getStudentSet(studentName);
+  studentSet.sort((a,b) => a.Moeilijk > b.Moeilijk ? 1 : b.Moeilijk > a.Moeilijk ? -1 :0);
+  // console.log(studentSet);
+  return studentSet;
+}
+
+export const sortByLeuk = (studentName) => {
+  let studentSet = getStudentSet(studentName);
+  studentSet.sort((a,b) => a.Leuk > b.Leuk ? 1 : b.Leuk > a.Leuk ? -1 :0);
+  // console.log(studentSet);
+  return studentSet;
+}

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 const Chart = props => {
-  const [data, setData] = useState({
+  // console.log(props)
+  const data = {
     labels: [
       "Gemiddeld Moeilijk Alle opdrachten",
       "Gemiddeld Leuk Alle Opdrachten",
@@ -16,15 +17,15 @@ const Chart = props => {
         hoverBorderColor: "rgba(209, 1, 1, 0.863)",
       },
     ],
-  });
+  };
 
-  const [options, setOptions] = useState({
+  const options = {
     maintainAspectRatio: false,
     legend: {
       display: false,
     },
     cutoutPercentage: 63,
-  });
+  };
 
   return (
     <div className="donut_container">

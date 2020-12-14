@@ -1,30 +1,33 @@
 import React from "react";
 import "./Students.css";
 import Select from "./Select";
-import person3 from "../img/person3.jpg";
-import person8 from "../img/person8.jpg";
 import Doughnut from "./Doughnut";
 import Bar from "./Bar";
 
 const Students = props => {
-  let phone, email, age;
+  // console.log(props.studentDataSet);
+  let phone, email, age, imgUrl;
   props.studentInfo.forEach(student => {
     if (student.name === props.studentName) {
       phone = student.phone;
       email = student.email;
       age = student.age;
+      imgUrl = student.studentImgUrl;
     }
-    // return [phone, email, age]
   });
 
   return (
     <div className="main">
       <div className="left_container">
-        <h3>Students</h3>
         <div className="list_container">
-          <form>
-            <Select studentInfo={props.studentInfo} />
-          </form>
+          <Select
+            studentInfo={props.studentInfo}
+            pickStudent={props.pickStudent}
+          />
+          <button onClick={props.handleSortByMoeilijk}>
+            Sorteer op 'Moeilijk'
+          </button>
+          <button onClick={props.handleSortByLeuk}>Sorteer op 'Leuk'</button>
         </div>
         <div className="student_feature-container">
           <div className="student_info-container">
@@ -34,9 +37,9 @@ const Students = props => {
             <p>leeftijd: {age}</p>
           </div>
           <div className="student_donut-container">
-            <Doughnut className="donut" dataSet={props.dataSet} />
+            <Doughnut className="donut" dataSet={props.studentDataSet} />
           </div>
-          <img src={person3} alt="student image" />
+          <img src={imgUrl} alt="" />
         </div>
       </div>
 
@@ -44,25 +47,28 @@ const Students = props => {
         <label>
           <input
             type="checkbox"
-            name="moeilijk"
-            onChange={props.moeilijkCheckedOnChange}
-            checked={props.moeilijkChecked}
+            name="studentMoeilijkChecked"
+            onChange={props.handleChange}
+            checked={props.studentMoeilijkChecked}
+            onClick={props.handleClickStudentMoeilijkCheckbox}
           />
           Moeilijk
         </label>
         <label>
           <input
             type="checkbox"
-            name="leuk"
-            onChange={props.leukCheckedOnChange}
-            checked={props.leukChecked}
+            name="studentLeukChecked"
+            onChange={props.handleChange}
+            checked={props.studentLeukChecked}
+            onClick={props.handleClickStudentLeukCheckbox}
           />
           Leuk
         </label>
         <Bar
+          BarTitle={props.studentBarTitle}
           xAxisLabels={props.xAxisLabels}
-          dataSet1Data={props.dataSet1Data}
-          dataSet2Data={props.dataSet2Data}
+          dataSet1Data={props.studentDataSet1Data}
+          dataSet2Data={props.studentDataSet2Data}
         />
       </div>
     </div>

@@ -1,8 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import { Bar } from "react-chartjs-2";
 
-const Chart = ({ xAxisLabels, dataSet1Data, dataSet2Data }) => {
-  const [data, setData] = useState({
+const Chart = ({ BarTitle, xAxisLabels, dataSet1Data, dataSet2Data }) => {
+
+  const data = {
     labels: xAxisLabels,
     datasets: [
       {
@@ -24,19 +25,26 @@ const Chart = ({ xAxisLabels, dataSet1Data, dataSet2Data }) => {
         hoverBorderColor: "rgb(1, 72, 163)",
       },
     ],
-  });
+  };
 
-  const [options, setOptions] = useState({
+  const options = {
+    title: {
+      display: true,
+      text: BarTitle,
+      fontSize: 22,
+      position: "top",
+  },
     scales: {
       yAxes: [
         {
           ticks: {
             beginAtZero: true,
+            max: 5,
           },
         },
       ],
     },
-  });
+  };
 
   return (
     <div className="chart">

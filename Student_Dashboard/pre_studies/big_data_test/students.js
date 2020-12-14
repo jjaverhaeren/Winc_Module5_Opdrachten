@@ -1042,7 +1042,7 @@ const ratings = [
 ];
 
 const students = [...ratings];
-// console.log(students);
+
 
 const distinctOpdrachtNames = [
   ...new Set(ratings.map(rating => rating.Opdracht)),
@@ -1071,10 +1071,56 @@ info.forEach(student => {
   student.age = randomAge();
 });
 
+// console.log(students);
 // console.log(info)
 // console.log(distincStudenttNames);
 // console.log(distinctOpdrachtNames);
 // console.log(distinctStudents);
+
+//   props.appointments.sort((a, b) =>
+//   a.time > b.time ? 1 : b.time > a.time ? -1 : 0
+// );
+
+const sortByName= () => {
+  info.sort((a,b) => a.name > b.name ? 1 : b.name > a.name ? -1 :0)
+  console.log(info)
+}
+
+
+
+// sortByName();
+
+const getStudentSet = (studentName) => {
+  let studentSet = [];
+  students.forEach(student => {
+    if(student.Student === studentName) {
+      studentSet.push(student)
+    }
+  })
+  // console.log(studentSet);
+  return studentSet;
+}
+
+const sortByMoeilijk = (studentName) => {
+  let studentSet = getStudentSet(studentName);
+  studentSet.sort((a,b) => a.Moeilijk > b.Moeilijk ? 1 : b.Moeilijk > a.Moeilijk ? -1 :0);
+  // console.log(studentSet);
+  return studentSet;
+}
+
+const sortByLeuk = (studentName) => {
+  let studentSet = getStudentSet(studentName);
+  studentSet.sort((a,b) => a.Leuk > b.Leuk ? 1 : b.Leuk > a.Leuk ? -1 :0);
+  // console.log(studentSet);
+  return studentSet;
+}
+
+sortByMoeilijk("Aranka");
+const studentSet = sortByLeuk("Rahima");
+// console.log(studentSet);
+
+
+
 
 // let sumMoeilijk = 0,
 //   sumLeuk = 0;
@@ -1118,43 +1164,85 @@ info.forEach(student => {
 //   }
 // };
 
-const getAveragesPerStudent = (studentName) => {
-    let sumMoeilijk = 0,
-      sumLeuk = 0,
-      numberOfTests = 0;
-    ratings.forEach(rating => {
-      if (rating.Student === studentName) {
-        sumMoeilijk += rating.Moeilijk;
-        sumLeuk += rating.Leuk;
-        numberOfTests++;
-      }
-    });
-    console.log(
-      `${studentName} gemiddelde Moeilijk: ${Math.round(
-        sumMoeilijk / numberOfTests
-      )}`
-    );
-    console.log(
-      `${studentName} gemiddelde Leuk: ${Math.round(
-        sumLeuk / numberOfTests
-      )}`
-    );
-    const averageMoeilijk = Math.round(sumMoeilijk / numberOfTests);
-    const averageLeuk = Math.round(sumLeuk / numberOfTests);
-    let dataSet = [];
-    dataSet.push(averageMoeilijk);
-    dataSet.push(averageLeuk)
+const getAveragesPerStudent = studentName => {
+  let sumMoeilijk = 0,
+    sumLeuk = 0,
+    numberOfTests = 0;
+  students.forEach(student => {
+    if (student.Student === studentName) {
+      sumMoeilijk += student.Moeilijk;
+      sumLeuk += student.Leuk;
+      numberOfTests++;
+    }
+  });
+
+  const averageMoeilijk = Math.round(sumMoeilijk / numberOfTests);
+  const averageLeuk = Math.round(sumLeuk / numberOfTests);
+  console.log(`${studentName} gemiddelde Moeilijk: ${averageMoeilijk}`);
+  console.log(`${studentName} gemiddelde Leuk: ${averageLeuk}`);
+  let dataSet = [];
+  dataSet.push(averageMoeilijk);
+  dataSet.push(averageLeuk);
   return dataSet;
 };
 
-const loepie = getAveragesPerStudent("Martina")
+
+const getAveragesPerStudentPerOpdracht = (studentName, opdracht) => {
+  let sumMoeilijk = 0,
+    sumLeuk = 0,
+    numberOfTests = 0;
+  students.forEach(student => {
+    if (student.Student === studentName && student.Opdracht === opdracht) {
+      sumMoeilijk += student.Moeilijk;
+      sumLeuk += student.Leuk;
+      numberOfTests++;
+    }
+  });
+
+  const averageMoeilijk = Math.round(sumMoeilijk / numberOfTests);
+  const averageLeuk = Math.round(sumLeuk / numberOfTests);
+  console.log(`${studentName} gemiddelde Moeilijk: ${averageMoeilijk}`);
+  console.log(`${studentName} gemiddelde Leuk: ${averageLeuk}`);
+  let dataSet = [];
+  dataSet.push(averageMoeilijk);
+  dataSet.push(averageLeuk);
+  return dataSet;
+};
+
+// const loepie = getAveragesPerStudent("Martina")
+
+
+const getAveragesPerStudentAllOpdrachten = studentName => {
+  let moeilijkArray = [], leukArray = [];
+  students.forEach(student => {
+    if (student.Student === studentName) {
+     moeilijkArray.push(student.Moeilijk);
+     leukArray.push(student.Leuk)
+    }
+  });
+  return [moeilijkArray, leukArray]
+}
+  const [moeilijkdata, leukData] = getAveragesPerStudentAllOpdrachten("Rahima");
+  // console.log(moeilijkdata)
+  // console.log(leukData)
+
+
+
+
+
+
+
+
+
+
+
+// const soepie = getAveragesPerStudentPerOpdracht("Storm", "W6D2 - Project - Eindopdracht")
 // console.log(soepie)
-console.log(loepie)
+// console.log(loepie)
 
 // distinctStudentNames.forEach(name => {
 //   getAveragesPerStudent(name);
 // })
-
 
 // distincStudenttNames.forEach(name => {
 //   getAveragesPerStudent(name)
