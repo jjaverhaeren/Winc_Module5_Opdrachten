@@ -9,7 +9,7 @@ const Select = props => {
   return (
     <form className="add_form" autoComplete="off">
       <select
-        className="student-select"
+        className="select"
         onChange={props.onChange}
         name="chooseStudent"
       >

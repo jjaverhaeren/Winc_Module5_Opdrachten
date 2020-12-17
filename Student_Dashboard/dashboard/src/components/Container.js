@@ -211,7 +211,7 @@ class Container extends Component {
   pickOpdrachtStudent(event) {
     let chosenOpdracht = event.target.value;
     this.state.studentName === ""
-      ? alert(`KIES EEN STUDENT`)
+      ? alert(`KIES EERST EEN STUDENT`)
       : this.state.studentSingleMulti === "single"
       ? this.pickOpdrachtStudentSingle(chosenOpdracht)
       : this.state.studentXAxisLabels.length > 4
