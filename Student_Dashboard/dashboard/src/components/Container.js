@@ -214,7 +214,7 @@ class Container extends Component {
       ? alert(`KIES EERST EEN STUDENT`)
       : this.state.studentSingleMulti === "single"
       ? this.pickOpdrachtStudentSingle(chosenOpdracht)
-      : this.state.studentXAxisLabels.length > 4
+      : this.state.studentXAxisLabels.length > 5
       ? this.pickOpdrachtStudentSingle(chosenOpdracht)
       : this.pickOpdrachtStudentMulti(chosenOpdracht);
   }
@@ -285,7 +285,7 @@ class Container extends Component {
     let chosenOpdracht = event.target.value;
     this.state.homeSingleMulti === "single"
       ? this.pickOpdrachtHomeSingle(chosenOpdracht)
-      : this.state.homeXAxisLabels.length > 4
+      : this.state.homeXAxisLabels.length > 5
       ? this.pickOpdrachtHomeSingle(chosenOpdracht)
       : this.pickOpdrachtHomeMulti(chosenOpdracht);
   }
