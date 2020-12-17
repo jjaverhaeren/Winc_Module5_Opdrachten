@@ -3,7 +3,7 @@ nav {
   justify-content: space-between;
   align-items: center;
   min-height: 10vh;
-  padding: 0px 75px 0px 45px;
+  padding: 0px 75px 0px 60px;
   background-color: rgb(55, 80, 100);
   color: white;
 }
@@ -11,7 +11,7 @@ nav {
 a {
   text-decoration: none;
   color: white;
-  margin: 0px 10px;
+  margin: 0px 0px;
 }
 
 ul {
