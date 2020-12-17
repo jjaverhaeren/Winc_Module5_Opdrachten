@@ -1,22 +1,17 @@
 nav {
   display: flex;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
   min-height: 10vh;
- 
+  padding: 0px 75px 0px 45px;
   background-color: rgb(55, 80, 100);
-
-  color: rgb(255, 208, 0);
   color: white;
-}
-
-main {
-  color: rgb(238, 3, 23);
 }
 
 a {
   text-decoration: none;
   color: white;
+  margin: 0px 10px;
 }
 
 ul {
@@ -27,5 +22,5 @@ ul {
 }
 
 li {
-  margin-left: 10px;
+  margin-left: 20px;
 }

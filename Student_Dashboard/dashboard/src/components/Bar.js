@@ -2,27 +2,25 @@ import React from "react";
 import { Bar } from "react-chartjs-2";
 
 const Chart = ({ BarTitle, xAxisLabels, dataSet1Data, dataSet2Data }) => {
-
   const data = {
     labels: xAxisLabels,
     datasets: [
       {
         label: "Moeilijk",
         data: dataSet1Data,
-        backgroundColor: "rgba(238, 3, 23,  0.8)",
+        backgroundColor: "rgba(238, 3, 23,  1)",
 
         borderWidth: 1,
         hoverBorderWidth: 1,
-        hoverBorderColor: "rgba(209, 1, 1, 0.863)",
-        scaleLabel: "Hatsieflatsie",
+        hoverBorderColor: "rgba(238, 3, 23,  0.5)",
       },
       {
         label: "Leuk",
         data: dataSet2Data,
-        backgroundColor: "rgb(255, 208, 0)",
+        backgroundColor: "rgba(255, 208, 0, 1)",
         borderWidth: 1,
         hoverBorderWidth: 1,
-        hoverBorderColor: "rgb(1, 72, 163)",
+        hoverBorderColor: "rgba(255, 208, 0, 0.5)",
       },
     ],
   };
@@ -33,7 +31,7 @@ const Chart = ({ BarTitle, xAxisLabels, dataSet1Data, dataSet2Data }) => {
       text: BarTitle,
       fontSize: 22,
       position: "top",
-  },
+    },
     scales: {
       yAxes: [
         {

@@ -5,7 +5,6 @@ import { Link } from "react-router-dom";
 const Nav = props => {
   return (
     <nav>
-      <h3>Winc Student Dashboard</h3>
       <ul>
         <Link to="/">
           <li>Home</li>
@@ -15,6 +14,7 @@ const Nav = props => {
           <li>Students</li>
         </Link>
       </ul>
+      <h3>Student Dashboard</h3>
     </nav>
   );
 };

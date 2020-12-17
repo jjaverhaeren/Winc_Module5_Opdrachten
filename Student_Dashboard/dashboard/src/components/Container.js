@@ -5,40 +5,55 @@ import Students from "./Students";
 import Nav from "./Nav";
 import {
   students,
-  getDataSet,
   distinctOpdrachtNames,
+  opdrachtInfo,
   studentInfo,
+  getStudentSet,
+  averageOfAbsolutelyEverythingMoeilijkEnLeuk,
   getAveragesPerStudent,
-  // getAveragesPerStudentPerOpdracht,
-  getAveragesPerStudentAllOpdrachten,
+  getAveragesPerOpdracht,
+  getAveragesAllOpdrachtenArray,
   sortByMoeilijk,
   sortByLeuk,
+  getDataSets,
 } from "../data/utils";
 
-const [homeDataSet1, homeDataSet2] = getDataSet();
-
-// const [, dataSet] = getAveragesPerStudent("Aranka");
-// const dataSet = [1, 1];
+const averagesPerOpdrachtArray = getAveragesAllOpdrachtenArray();
+const [xAxisLAbels, moeilijkData, leukData] = getDataSets(
+  averagesPerOpdrachtArray
+);
+const [averageData] = averageOfAbsolutelyEverythingMoeilijkEnLeuk();
 
 class Container extends Component {
   constructor(props) {
     super();
     this.state = {
-      homeBarTitle: "Gemiddelde per Opdracht van alle Studenten",
-      xAxisLabels: distinctOpdrachtNames,
-      homeDataSet1Data: homeDataSet1,
-      homeDataSet2Data: homeDataSet2,
+      homeBarTitle: "Gemiddelden per Opdracht van alle Studenten",
+      averagesPerOpdrachtArray: averagesPerOpdrachtArray,
+      homeXAxisLabels: xAxisLAbels,
+      homeDataSet1Data: moeilijkData,
+      homeDataSet2Data: leukData,
+      homeDataSet: averageData,
+      homeMoeilijkChecked: true,
+      homeLeukChecked: true,
+      homeSortedByMoeilijk: false,
+      homeSortedByLeuk: false,
+      homeSingleMulti: "single",
+      studentSortedByMoeilijk: false,
+      studentSortedByLeuk: false,
       studentBarTitle: "",
+      studentXAxisLabels: distinctOpdrachtNames,
       studentSet: students,
       studentDataSet1Data: [],
       studentDataSet2Data: [],
       studentName: "",
-      homeDataSet: [1, 1],
       studentDataSet: [1, 1],
-      homeMoeilijkChecked: true,
-      homeLeukChecked: true,
       studentMoeilijkChecked: true,
       studentLeukChecked: true,
+      studentSingleMulti: "single",
+      chooseAStudent: "Kies een Student",
+      chooseAOpdracht: "Kies een Opdracht",
+      displayCheckBoxes: true,
     };
     this.handleChange = this.handleChange.bind(this);
     this.handleClickHomeMoeilijkCheckbox = this.handleClickHomeMoeilijkCheckbox.bind(
@@ -56,6 +71,13 @@ class Container extends Component {
     this.pickStudent = this.pickStudent.bind(this);
     this.handleSortByMoeilijk = this.handleSortByMoeilijk.bind(this);
     this.handleSortByLeuk = this.handleSortByLeuk.bind(this);
+    this.handleSortDefault = this.handleSortDefault.bind(this);
+    this.handleSortByMoeilijkHome = this.handleSortByMoeilijkHome.bind(this);
+    this.handleSortByLeukkHome = this.handleSortByLeukkHome.bind(this);
+    this.handleSortDefaultHome = this.handleSortDefaultHome.bind(this);
+    this.pickOpdrachtStudent = this.pickOpdrachtStudent.bind(this);
+    this.pickOpdrachtHome = this.pickOpdrachtHome.bind(this);
+    this.pickOpdrachtHome = this.pickOpdrachtHome.bind(this);
   }
 
   handleChange(event) {
@@ -65,8 +87,41 @@ class Container extends Component {
       : this.setState({ [name]: value });
   }
 
+  getHomeDataIfChecked = () => {
+    const averagesPerOpdrachtArray = getAveragesAllOpdrachtenArray();
+    if (
+      this.state.homeSortedByMoeilijk === false &&
+      this.state.homeSortedByLeuk === false
+    ) {
+      let [, newMoeilijkData, newLeukData] = getDataSets(
+        averagesPerOpdrachtArray
+      );
+      return [newMoeilijkData, newLeukData];
+    } else if (
+      this.state.homeSortedByMoeilijk === true &&
+      this.state.homeSortedByLeuk === false
+    ) {
+      let averagesPerOpdrachtArraySorted = sortByMoeilijk(
+        averagesPerOpdrachtArray
+      );
+      let [, newMoeilijkData, newLeukData] = getDataSets(
+        averagesPerOpdrachtArraySorted
+      );
+      return [newMoeilijkData, newLeukData];
+    } else if (
+      this.state.homeSortedByMoeilijk === false &&
+      this.state.homeSortedByLeuk === true
+    ) {
+      let averagesPerOpdrachtArraySorted = sortByLeuk(averagesPerOpdrachtArray);
+      let [, newMoeilijkData, newLeukData] = getDataSets(
+        averagesPerOpdrachtArraySorted
+      );
+      return [newMoeilijkData, newLeukData];
+    }
+  };
+
   handleClickHomeMoeilijkCheckbox(event) {
-    const [homeDataSet1] = getDataSet();
+    const [homeDataSet1] = this.getHomeDataIfChecked();
     const dataSetEmpty = new Array(homeDataSet1.length).fill(0);
     event.target.checked === true && event.target.name === "homeMoeilijkChecked"
       ? this.setState({ homeDataSet1Data: homeDataSet1 })
@@ -74,100 +129,339 @@ class Container extends Component {
   }
 
   handleClickHomeLeukCheckbox(event) {
-    const [, homeDataSet2] = getDataSet();
+    const [, homeDataSet2] = this.getHomeDataIfChecked();
     const dataSetEmpty = new Array(homeDataSet2.length).fill(0);
     event.target.checked === true && event.target.name === "homeLeukChecked"
       ? this.setState({ homeDataSet2Data: homeDataSet2 })
       : this.setState({ homeDataSet2Data: dataSetEmpty });
   }
 
-  // setStudentSet() {
-  //   this.setState(prevState => {
-  //     return{...prevState, studentSet: ietsmetstudents}
-  //   })
-  // }
+  getStudentDataIfChecked = () => {
+    let studentSet = getStudentSet(this.state.studentName);
+    if (
+      this.state.studentSortedByMoeilijk === false &&
+      this.state.studentSortedByLeuk === false
+    ) {
+      let [, newMoeilijkData, newLeukData] = getDataSets(studentSet);
+      return [newMoeilijkData, newLeukData];
+    } else if (
+      this.state.studentSortedByMoeilijk === true &&
+      this.state.studentSortedByLeuk === false
+    ) {
+      let studentSetSorted = sortByMoeilijk(studentSet);
+      let [, newMoeilijkData, newLeukData] = getDataSets(studentSetSorted);
+      return [newMoeilijkData, newLeukData];
+    } else if (
+      this.state.studentSortedByMoeilijk === false &&
+      this.state.studentSortedByLeuk === true
+    ) {
+      let studentSetSorted = sortByLeuk(studentSet);
+      let [, newMoeilijkData, newLeukData] = getDataSets(studentSetSorted);
+      return [newMoeilijkData, newLeukData];
+    }
+  };
 
   handleClickStudentMoeilijkCheckbox(event) {
-    const [studentDataSet1] = getAveragesPerStudentAllOpdrachten(
-      this.state.studentName
-    );
-    // const studentDataSet1 = new Array(56).fill(5);
-    const dataSetEmpty = new Array(studentDataSet1.length).fill(0);
+    const [newMoeilijkData] = this.getStudentDataIfChecked();
+    const dataSetEmpty = new Array(56).fill(0);
     event.target.checked === true &&
     event.target.name === "studentMoeilijkChecked"
-      ? this.setState({ studentDataSet1Data: studentDataSet1 })
+      ? this.setState({
+          studentDataSet1Data: newMoeilijkData,
+        })
       : this.setState({ studentDataSet1Data: dataSetEmpty });
   }
 
   handleClickStudentLeukCheckbox(event) {
-    const [, studentDataSet2] = getAveragesPerStudentAllOpdrachten(
-      this.state.studentName
-    );
-    // const studentDataSet2 = new Array(56).fill(5);
-    const dataSetEmpty = new Array(studentDataSet2.length).fill(0);
+    const [, newLeukData] = this.getStudentDataIfChecked();
+    const dataSetEmpty = new Array(56).fill(0);
     event.target.checked === true && event.target.name === "studentLeukChecked"
-      ? this.setState({ studentDataSet2Data: studentDataSet2 })
+      ? this.setState({ studentDataSet2Data: newLeukData })
       : this.setState({ studentDataSet2Data: dataSetEmpty });
   }
 
   pickStudent(event) {
     this.setState(prevState => {
       let chosenStudent = event.target.value;
-      let [newStudentName, newDataSet] = getAveragesPerStudent(chosenStudent);
-      let [
-        newStudentDataSet1,
-        newStudentDataSet2,
-      ] = getAveragesPerStudentAllOpdrachten(students, chosenStudent);
+      let [newStudentName, newDataSet] = getAveragesPerStudent(
+        students,
+        chosenStudent
+      );
+      let studentSet = getStudentSet(chosenStudent);
+      const [newXAxisLAbels, newMoeilijkData, newLeukData] = getDataSets(
+        studentSet
+      );
 
       const newState = {
         ...prevState,
+        studentSortedByMoeilijk: false,
+        studentSortedByLeuk: false,
+        studentXAxisLabels: newXAxisLAbels,
         studentBarTitle: `Moeilijk vs Leuk voor ${newStudentName} per Opdracht`,
-        studentName: newStudentName,
+        studentName: chosenStudent,
         studentDataSet: newDataSet,
-        studentDataSet1Data: newStudentDataSet1,
-        studentDataSet2Data: newStudentDataSet2,
+        studentDataSet1Data: newMoeilijkData,
+        studentDataSet2Data: newLeukData,
+        displayCheckBoxes: true,
       };
       return newState;
     });
   }
 
-  //!! Labels moeten nog meeveranderen
-  //checkboxes werken niet meer
+  pickOpdrachtStudent(event) {
+    let chosenOpdracht = event.target.value;
+    this.state.studentName === ""
+      ? alert(`KIES EEN STUDENT`)
+      : this.state.studentSingleMulti === "single"
+      ? this.pickOpdrachtStudentSingle(chosenOpdracht)
+      : this.state.studentXAxisLabels.length > 4
+      ? this.pickOpdrachtStudentSingle(chosenOpdracht)
+      : this.pickOpdrachtStudentMulti(chosenOpdracht);
+  }
+
+  pickOpdrachtStudentSingle(chosenOpdracht) {
+    if (chosenOpdracht === "Kies een Opdracht") {
+      this.handleSortDefault();
+    } else {
+      this.setState(prevState => {
+        let newLeukData = [],
+          newMoeilijkData = [],
+          newXAxisLabels = [];
+        const studentSet = getStudentSet(this.state.studentName);
+        studentSet.forEach(item => {
+          if (item.Opdracht === chosenOpdracht) {
+            newXAxisLabels.push(item.Opdracht);
+            newMoeilijkData.push(item.Moeilijk);
+            newLeukData.push(item.Leuk);
+          }
+        });
+        const newState = {
+          ...prevState,
+          studentSortedByMoeilijk: false,
+          studentSortedByLeuk: false,
+          studentXAxisLabels: newXAxisLabels,
+          studentBarTitle: `Moeilijk vs Leuk voor ${this.state.studentName} bij opdracht ${chosenOpdracht}`,
+          studentDataSet1Data: newMoeilijkData,
+          studentDataSet2Data: newLeukData,
+          displayCheckBoxes: false,
+        };
+        return newState;
+      });
+    }
+  }
+
+  pickOpdrachtStudentMulti(chosenOpdracht) {
+    if (chosenOpdracht === "Kies een Opdracht") {
+      this.handleSortDefault();
+    } else {
+      this.setState(prevState => {
+        let newLeukData = [...prevState.studentDataSet2Data],
+          newMoeilijkData = [...prevState.studentDataSet1Data],
+          newXAxisLabels = [...prevState.studentXAxisLabels];
+        const studentSet = getStudentSet(this.state.studentName);
+        studentSet.forEach(item => {
+          if (item.Opdracht === chosenOpdracht) {
+            newXAxisLabels.push(item.Opdracht);
+            newMoeilijkData.push(item.Moeilijk);
+            newLeukData.push(item.Leuk);
+          }
+        });
+        const newState = {
+          ...prevState,
+          studentSortedByMoeilijk: false,
+          studentSortedByLeuk: false,
+          studentXAxisLabels: newXAxisLabels,
+          studentBarTitle: `Moeilijk vs Leuk voor ${this.state.studentName} bij de gekozen Opdrachten`,
+          studentDataSet1Data: newMoeilijkData,
+          studentDataSet2Data: newLeukData,
+          displayCheckBoxes: false,
+        };
+        return newState;
+      });
+    }
+  }
+
+  pickOpdrachtHome(event) {
+    let chosenOpdracht = event.target.value;
+    this.state.homeSingleMulti === "single"
+      ? this.pickOpdrachtHomeSingle(chosenOpdracht)
+      : this.state.homeXAxisLabels.length > 4
+      ? this.pickOpdrachtHomeSingle(chosenOpdracht)
+      : this.pickOpdrachtHomeMulti(chosenOpdracht);
+  }
+
+  pickOpdrachtHomeSingle(chosenOpdracht) {
+    this.setState(prevState => {
+      let newLeukData = [],
+        newMoeilijkData = [],
+        newXAxisLabels = [];
+      const averagesPerOpdracht = getAveragesPerOpdracht(chosenOpdracht);
+      newXAxisLabels.push(averagesPerOpdracht.Opdracht);
+      newMoeilijkData.push(averagesPerOpdracht.Moeilijk);
+      newLeukData.push(averagesPerOpdracht.Leuk);
+      const newState = {
+        ...prevState,
+        homeBarTitle: `Gemiddelden van alle Studenten voor Opdracht ${chosenOpdracht}`,
+        homeXAxisLabels: newXAxisLabels,
+        homeDataSet1Data: newMoeilijkData,
+        homeDataSet2Data: newLeukData,
+        displayCheckBoxes: false,
+      };
+      return newState;
+    });
+  }
+
+  pickOpdrachtHomeMulti(chosenOpdracht) {
+    this.setState(prevState => {
+      let newXAxisLabels = [...prevState.homeXAxisLabels],
+        newMoeilijkData = [...prevState.homeDataSet1Data],
+        newLeukData = [...prevState.homeDataSet2Data];
+      const averagesPerOpdracht = getAveragesPerOpdracht(chosenOpdracht);
+      newXAxisLabels.push(averagesPerOpdracht.Opdracht);
+      newMoeilijkData.push(averagesPerOpdracht.Moeilijk);
+      newLeukData.push(averagesPerOpdracht.Leuk);
+      const newState = {
+        ...prevState,
+        homeBarTitle: `Gemiddelden van alle Studenten voor de gekozen Opdrachten`,
+        homeXAxisLabels: newXAxisLabels,
+        homeDataSet1Data: newMoeilijkData,
+        homeDataSet2Data: newLeukData,
+        displayCheckBoxes: false,
+      };
+      return newState;
+    });
+  }
+
   handleSortByMoeilijk(event) {
     this.setState(prevState => {
-      let chosenStudent = this.state.studentName;
-      let studentSet = sortByMoeilijk(chosenStudent);
-      let [
-        newStudentDataSet1,
-        newStudentDataSet2,
-      ] = getAveragesPerStudentAllOpdrachten(studentSet, chosenStudent);
-
+      let studentSet = getStudentSet(this.state.studentName);
+      let studentSetSorted = sortByMoeilijk(studentSet);
+      const [newXAxisLAbels, newMoeilijkData, newLeukData] = getDataSets(
+        studentSetSorted
+      );
       const newState = {
         ...prevState,
-        studentBarTitle: `Opdrachten gesorteerd op 'Moeilijk voor ${chosenStudent}.`,
-        studentDataSet1Data: newStudentDataSet1,
-        studentDataSet2Data: newStudentDataSet2,
+        studentSortedByMoeilijk: true,
+        studentSortedByLeuk: false,
+        studentXAxisLabels: newXAxisLAbels,
+        studentBarTitle: `Opdrachten gesorteerd op 'Moeilijk' voor ${this.state.studentName}.`,
+        studentDataSet1Data: newMoeilijkData,
+        studentDataSet2Data: newLeukData,
+        studentMoeilijkChecked: true,
+        studentLeukChecked: true,
+        displayCheckBoxes: true,
       };
       return newState;
     });
   }
 
-  //!! Labels moeten nog meeveranderen
-  //checkboxes werken niet meer
   handleSortByLeuk(event) {
     this.setState(prevState => {
-      let chosenStudent = this.state.studentName;
-      let studentSet = sortByLeuk(chosenStudent);
-      let [
-        newStudentDataSet1,
-        newStudentDataSet2,
-      ] = getAveragesPerStudentAllOpdrachten(studentSet, chosenStudent);
+      let studentSet = getStudentSet(this.state.studentName);
+      let studentSetSorted = sortByLeuk(studentSet);
+      const [newXAxisLAbels, newMoeilijkData, newLeukData] = getDataSets(
+        studentSetSorted
+      );
+      const newState = {
+        ...prevState,
+        studentSortedByMoeilijk: false,
+        studentSortedByLeuk: true,
+        studentXAxisLabels: newXAxisLAbels,
+        studentBarTitle: `Opdrachten gesorteerd op 'Leuk' voor ${this.state.studentName}.`,
+        studentDataSet1Data: newMoeilijkData,
+        studentDataSet2Data: newLeukData,
+        studentMoeilijkChecked: true,
+        studentLeukChecked: true,
+        displayCheckBoxes: true,
+      };
+      return newState;
+    });
+  }
+
+  handleSortDefault(event) {
+    this.setState(prevState => {
+      let studentSet = getStudentSet(this.state.studentName);
+      const [newXAxisLAbels, newMoeilijkData, newLeukData] = getDataSets(
+        studentSet
+      );
 
       const newState = {
         ...prevState,
-        studentBarTitle: `Opdrachten gesorteerd op 'Leuk' voor ${chosenStudent}.`,
-        studentDataSet1Data: newStudentDataSet1,
-        studentDataSet2Data: newStudentDataSet2,
+        studentSortedByMoeilijk: false,
+        studentSortedByLeuk: false,
+        studentXAxisLabels: newXAxisLAbels,
+        studentBarTitle: `Moeilijk vs Leuk voor ${this.state.studentName} per Opdracht`,
+        studentDataSet1Data: newMoeilijkData,
+        studentDataSet2Data: newLeukData,
+        studentMoeilijkChecked: true,
+        studentLeukChecked: true,
+        displayCheckBoxes: true,
+      };
+      return newState;
+    });
+  }
+
+  handleSortByMoeilijkHome(event) {
+    this.setState(prevState => {
+      const averagesPerOpdrachtArray = this.state.averagesPerOpdrachtArray;
+      const averagesPerOpdrachtArraySorted = sortByMoeilijk(
+        averagesPerOpdrachtArray
+      );
+      const [xAxisLAbels, moeilijkData, leukData] = getDataSets(
+        averagesPerOpdrachtArraySorted
+      );
+      const newState = {
+        ...prevState,
+        homeSortedByMoeilijk: true,
+        homeSortedByLeuk: false,
+        homeBarTitle: "Gesorteerd op 'Moeilijk' voor alle studenten",
+        homeXAxisLabels: xAxisLAbels,
+        homeDataSet1Data: moeilijkData,
+        homeDataSet2Data: leukData,
+        displayCheckBoxes: true,
+      };
+      return newState;
+    });
+  }
+
+  handleSortByLeukkHome(event) {
+    this.setState(prevState => {
+      const averagesPerOpdrachtArray = this.state.averagesPerOpdrachtArray;
+      const averagesPerOpdrachtArraySorted = sortByLeuk(
+        averagesPerOpdrachtArray
+      );
+      const [xAxisLAbels, moeilijkData, leukData] = getDataSets(
+        averagesPerOpdrachtArraySorted
+      );
+      const newState = {
+        ...prevState,
+        homeSortedByMoeilijk: false,
+        homeSortedByLeuk: true,
+        homeBarTitle: "Gesorteerd op 'Leuk' voor alle studenten",
+        homeXAxisLabels: xAxisLAbels,
+        homeDataSet1Data: moeilijkData,
+        homeDataSet2Data: leukData,
+        displayCheckBoxes: true,
+      };
+      return newState;
+    });
+  }
+
+  handleSortDefaultHome(event) {
+    this.setState(prevState => {
+      const averagesPerOpdrachtArray = getAveragesAllOpdrachtenArray();
+      const [xAxisLAbels, moeilijkData, leukData] = getDataSets(
+        averagesPerOpdrachtArray
+      );
+      const newState = {
+        ...prevState,
+        homeSortedByMoeilijk: false,
+        homeSortedByLeuk: false,
+        homeBarTitle: "Gemiddelde per Opdracht van alle Studenten",
+        homeXAxisLabels: xAxisLAbels,
+        homeDataSet1Data: moeilijkData,
+        homeDataSet2Data: leukData,
+        displayCheckBoxes: true,
       };
       return newState;
     });
@@ -185,14 +479,18 @@ class Container extends Component {
                 exact
                 render={props => (
                   <Home
+                    opdrachtInfo={opdrachtInfo}
+                    chooseAOpdracht={this.state.chooseAOpdracht}
                     homeBarTitle={this.state.homeBarTitle}
-                    xAxisLabels={this.state.xAxisLabels}
+                    homeXAxisLabels={this.state.homeXAxisLabels}
                     homeDataSet1Data={this.state.homeDataSet1Data}
                     homeDataSet2Data={this.state.homeDataSet2Data}
                     studentName={this.state.studentName}
                     homeDataSet={this.state.homeDataSet}
                     homeMoeilijkChecked={this.state.homeMoeilijkChecked}
                     homeLeukChecked={this.state.homeLeukChecked}
+                    displayCheckBoxes={this.state.displayCheckBoxes}
+                    homeSingleMulti={this.state.homeSingleMulti}
                     handleChange={this.handleChange}
                     handleClickHomeMoeilijkCheckbox={
                       this.handleClickHomeMoeilijkCheckbox
@@ -200,8 +498,10 @@ class Container extends Component {
                     handleClickHomeLeukCheckbox={
                       this.handleClickHomeLeukCheckbox
                     }
-                    handleSortByMoeilijk={this.handleSortByMoeilijk}
-                    handleSortByLeuk={this.handleSortByLeuk}
+                    handleSortByMoeilijkHome={this.handleSortByMoeilijkHome}
+                    handleSortByLeukkHome={this.handleSortByLeukkHome}
+                    handleSortDefaultHome={this.handleSortDefaultHome}
+                    pickOpdrachtHome={this.pickOpdrachtHome}
                   />
                 )}
               />
@@ -211,13 +511,18 @@ class Container extends Component {
                   <Students
                     studentBarTitle={this.state.studentBarTitle}
                     studentInfo={studentInfo}
+                    opdrachtInfo={opdrachtInfo}
+                    chooseAStudent={this.state.chooseAStudent}
+                    chooseAOpdracht={this.state.chooseAOpdracht}
                     studentName={this.state.studentName}
                     studentDataSet={this.state.studentDataSet}
-                    xAxisLabels={this.state.xAxisLabels}
+                    studentXAxisLabels={this.state.studentXAxisLabels}
                     studentDataSet1Data={this.state.studentDataSet1Data}
                     studentDataSet2Data={this.state.studentDataSet2Data}
                     studentMoeilijkChecked={this.state.studentMoeilijkChecked}
                     studentLeukChecked={this.state.studentLeukChecked}
+                    displayCheckBoxes={this.state.displayCheckBoxes}
+                    studentSingleMulti={this.state.studentSingleMulti}
                     handleChange={this.handleChange}
                     handleClickStudentMoeilijkCheckbox={
                       this.handleClickStudentMoeilijkCheckbox
@@ -228,6 +533,8 @@ class Container extends Component {
                     pickStudent={this.pickStudent}
                     handleSortByMoeilijk={this.handleSortByMoeilijk}
                     handleSortByLeuk={this.handleSortByLeuk}
+                    handleSortDefault={this.handleSortDefault}
+                    pickOpdrachtStudent={this.pickOpdrachtStudent}
                   />
                 )}
               />

@@ -2,19 +2,18 @@ import React from "react";
 import { Doughnut } from "react-chartjs-2";
 
 const Chart = props => {
-  // console.log(props)
   const data = {
     labels: [
-      "Gemiddeld Moeilijk Alle opdrachten",
-      "Gemiddeld Leuk Alle Opdrachten",
+      "Gemiddeld Moeilijk - Alle Opdrachten",
+      "Gemiddeld Leuk - Alle Opdrachten",
     ],
     datasets: [
       {
         data: props.dataSet,
-        backgroundColor: ["rgba(238, 3, 23,  0.8)", "rgb(255, 208, 0)"],
+        backgroundColor: ["rgba(238, 3, 23,  1)", "rgba(255, 208, 0, 1)"],
         borderWidth: 1,
         hoverBorderWidth: 1,
-        hoverBorderColor: "rgba(209, 1, 1, 0.863)",
+        hoverBorderColor: ["rgba(238, 3, 23,  0.5)", "rgba(255, 208, 0, 0.5)"],
       },
     ],
   };

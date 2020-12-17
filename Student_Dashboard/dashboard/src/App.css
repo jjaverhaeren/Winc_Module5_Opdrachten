@@ -1,21 +1,6 @@
 .App {
   text-align: center;
+  background-color: rgb(55, 80, 100);
 }
 
-.color1 {
-  background-color: rgba(255, 0, 0, 0.863);
-}
-
-.color1:hover{
-  background-color: rgba(209, 1, 1, 0.863);
-}
-
-.color2 {
-  background-color: rgb(1, 91, 209);
-}
-
-.color2:hover {
-  background-color: rgb(1, 72, 163);
-  color: rgba(238, 3, 23,  0.8);
-}
 
