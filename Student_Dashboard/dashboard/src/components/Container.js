@@ -28,7 +28,7 @@ class Container extends Component {
   constructor(props) {
     super();
     this.state = {
-      homeBarTitle: "Gemiddelden per Opdracht van alle Studenten",
+      homeBarTitle: "Gemiddelde per Opdracht van alle Studenten",
       averagesPerOpdrachtArray: averagesPerOpdrachtArray,
       homeXAxisLabels: xAxisLAbels,
       homeDataSet1Data: moeilijkData,
@@ -76,7 +76,6 @@ class Container extends Component {
     this.handleSortByLeukkHome = this.handleSortByLeukkHome.bind(this);
     this.handleSortDefaultHome = this.handleSortDefaultHome.bind(this);
     this.pickOpdrachtStudent = this.pickOpdrachtStudent.bind(this);
-    this.pickOpdrachtHome = this.pickOpdrachtHome.bind(this);
     this.pickOpdrachtHome = this.pickOpdrachtHome.bind(this);
   }
 
@@ -214,7 +213,7 @@ class Container extends Component {
       ? alert(`KIES EERST EEN STUDENT`)
       : this.state.studentSingleMulti === "single"
       ? this.pickOpdrachtStudentSingle(chosenOpdracht)
-      : this.state.studentXAxisLabels.length > 9
+      : this.state.studentXAxisLabels.length > 7
       ? this.pickOpdrachtStudentSingle(chosenOpdracht)
       : this.pickOpdrachtStudentMulti(chosenOpdracht);
   }
@@ -285,7 +284,7 @@ class Container extends Component {
     let chosenOpdracht = event.target.value;
     this.state.homeSingleMulti === "single"
       ? this.pickOpdrachtHomeSingle(chosenOpdracht)
-      : this.state.homeXAxisLabels.length > 9
+      : this.state.homeXAxisLabels.length > 7
       ? this.pickOpdrachtHomeSingle(chosenOpdracht)
       : this.pickOpdrachtHomeMulti(chosenOpdracht);
   }
@@ -301,7 +300,7 @@ class Container extends Component {
       newLeukData.push(averagesPerOpdracht.Leuk);
       const newState = {
         ...prevState,
-        homeBarTitle: `Gemiddelden van alle Studenten voor Opdracht ${chosenOpdracht}`,
+        homeBarTitle: `Gemiddelde van alle Studenten voor Opdracht ${chosenOpdracht}`,
         homeXAxisLabels: newXAxisLabels,
         homeDataSet1Data: newMoeilijkData,
         homeDataSet2Data: newLeukData,
@@ -322,7 +321,7 @@ class Container extends Component {
       newLeukData.push(averagesPerOpdracht.Leuk);
       const newState = {
         ...prevState,
-        homeBarTitle: `Gemiddelden van alle Studenten voor de gekozen Opdrachten`,
+        homeBarTitle: `Gemiddelde van alle Studenten voor de gekozen Opdrachten`,
         homeXAxisLabels: newXAxisLabels,
         homeDataSet1Data: newMoeilijkData,
         homeDataSet2Data: newLeukData,
@@ -332,7 +331,7 @@ class Container extends Component {
     });
   }
 
-  handleSortByMoeilijk(event) {
+  handleSortByMoeilijk() {
     this.setState(prevState => {
       let studentSet = getStudentSet(this.state.studentName);
       let studentSetSorted = sortByMoeilijk(studentSet);
@@ -355,7 +354,7 @@ class Container extends Component {
     });
   }
 
-  handleSortByLeuk(event) {
+  handleSortByLeuk() {
     this.setState(prevState => {
       let studentSet = getStudentSet(this.state.studentName);
       let studentSetSorted = sortByLeuk(studentSet);
@@ -378,7 +377,7 @@ class Container extends Component {
     });
   }
 
-  handleSortDefault(event) {
+  handleSortDefault() {
     this.setState(prevState => {
       let studentSet = getStudentSet(this.state.studentName);
       const [newXAxisLAbels, newMoeilijkData, newLeukData] = getDataSets(
@@ -401,7 +400,7 @@ class Container extends Component {
     });
   }
 
-  handleSortByMoeilijkHome(event) {
+  handleSortByMoeilijkHome() {
     this.setState(prevState => {
       const averagesPerOpdrachtArray = this.state.averagesPerOpdrachtArray;
       const averagesPerOpdrachtArraySorted = sortByMoeilijk(
@@ -424,7 +423,7 @@ class Container extends Component {
     });
   }
 
-  handleSortByLeukkHome(event) {
+  handleSortByLeukkHome() {
     this.setState(prevState => {
       const averagesPerOpdrachtArray = this.state.averagesPerOpdrachtArray;
       const averagesPerOpdrachtArraySorted = sortByLeuk(
@@ -447,7 +446,7 @@ class Container extends Component {
     });
   }
 
-  handleSortDefaultHome(event) {
+  handleSortDefaultHome() {
     this.setState(prevState => {
       const averagesPerOpdrachtArray = getAveragesAllOpdrachtenArray();
       const [xAxisLAbels, moeilijkData, leukData] = getDataSets(
